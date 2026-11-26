@@ -62,7 +62,7 @@
       });
       const rec = document.getElementById("rec");
       if (done < Q.length) { rec.innerHTML = `<strong>Ihr nächster Schritt</strong><p>Noch ${Q.length-done} Fragen, dann erscheint hier Ihre Empfehlung.</p>`; return; }
-      rec.innerHTML = `<strong>${lv[2]} Größter Hebel: ${weak.n}</strong><p>${weak.tip}</p><p>Passendes Paket: <a href="../index.html#produkte">${weak.pk}</a></p><p>Einstieg: <a href="potenzial-check.html">KI-Potenzial-Check (1.290 € netto)</a>, Angebot online ausfüllen und unterschreiben.</p><p><a class="btn" href="mailto:kontakt@klarwerk-ai.example?subject=Erstgespr%C3%A4ch%20anfragen">Erstgespräch anfragen</a></p>`;
+      rec.innerHTML = `<strong>${lv[2]} Größter Hebel: ${weak.n}</strong><p>${weak.tip}</p><p>Passendes Paket: <a href="../index.html#produkte">${weak.pk}</a></p><p>Einstieg: <a href="potenzial-check.html">KI-Potenzial-Check (1.290 € netto)</a>, Angebot ansehen und anfragen.</p><p><a class="btn" href="mailto:kontakt@klarwerk-ai.example?subject=Erstgespr%C3%A4ch%20anfragen">Erstgespräch anfragen</a></p>`;
     }
     quiz.addEventListener("change", e => {
       const m = e.target.name.match(/^q(\d+)$/);

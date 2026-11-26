@@ -435,7 +435,6 @@
     .seite-potenzial .doc { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius); padding: 40px 48px; }
     .seite-potenzial .doc h1 { margin-bottom: 8px; }
     .seite-potenzial .meta { color: var(--text-leise); margin-bottom: 24px; }
-    .seite-potenzial .fakten { background: var(--flaeche); border-left: 4px solid var(--aktion); padding: 12px 18px; border-radius: 4px; max-width: none; }
 
     .seite-potenzial table.tab { border-collapse: collapse; margin: 0 0 1em; width: 100%; max-width: 760px; }
     @media (max-width: 480px) { .seite-potenzial table.tab { display: block; overflow-x: auto; } .seite-potenzial .tab th, .seite-potenzial .tab td { padding: 8px 10px; } }
@@ -444,38 +443,42 @@
     .seite-potenzial .tab tbody th { font-weight: 600; color: var(--marke); background: var(--flaeche); width: 30%; }
     .seite-potenzial .tab .r { text-align: right; white-space: nowrap; }
 
-    /* Formular */
-    .seite-potenzial .annahme { border-top: 3px solid var(--marke); margin-top: 48px; padding: 8px 0 0; }
-    .seite-potenzial .zwei { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start; }
-    .seite-potenzial fieldset { border: 1px solid var(--linie); border-radius: var(--radius); padding: 18px 20px 8px; margin: 0 0 20px; }
+    /* Zusammenfassung oben: Text und Ablauf links, Preis-Kasten rechts (seit 26.11.2026) */
+    .seite-potenzial .angebot-kurz { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+    .seite-potenzial .angebot-kurz h3 { margin-top: 16px; }
+    .seite-potenzial .ablauf li { margin-bottom: 6px; }
+    .seite-potenzial .kaufbox { margin-top: 0; }
+    .seite-potenzial .kaufbox p { margin-bottom: 8px; }
+    .seite-potenzial .kaufbox .preis-hinweis { margin-bottom: 12px; }
+    .seite-potenzial .doc .haken { padding-left: 0; margin-bottom: 16px; }
+    .seite-potenzial .kauf-knoepfe .btn { margin: 0; }
+
+    /* Details zum Aufklappen: Überschrift in der Zeile, Inhalt wie im Angebot */
+    .seite-potenzial summary h3 { margin: 0; font-size: 16px; color: var(--marke); }
+    .seite-potenzial details > div { padding-top: 4px; }
+
+    /* Kurzanfrage */
+    .seite-potenzial .anfrage { border-top: 3px solid var(--marke); margin-top: 48px; padding-top: 8px; scroll-margin-top: 96px; }
+    .seite-potenzial fieldset { border: 1px solid var(--linie); border-radius: var(--radius); padding: 14px 20px 6px; margin: 0 0 16px; }
     .seite-potenzial legend { font-weight: 700; color: var(--marke); padding: 0 8px; }
     .seite-potenzial .feld { margin-bottom: 14px; }
-    .seite-potenzial label, .seite-potenzial .lbl { display: block; font-weight: 600; margin-bottom: 4px; }
+    .seite-potenzial label { display: block; font-weight: 600; margin-bottom: 4px; }
     .seite-potenzial .pflicht { color: #9B1C1C; }
-    .seite-potenzial input[type=text], .seite-potenzial input[type=email], .seite-potenzial input[type=tel], .seite-potenzial input[type=date], .seite-potenzial textarea, .seite-potenzial select {
+    .seite-potenzial input[type=text], .seite-potenzial input[type=email], .seite-potenzial textarea {
       width: 100%; font: inherit; color: var(--text); background: var(--weiss);
       border: 1px solid #6B7685; border-radius: 4px; padding: 9px 12px;
     }
     .seite-potenzial textarea { min-height: 80px; resize: vertical; }
-    .seite-potenzial input:focus-visible, .seite-potenzial textarea:focus-visible, .seite-potenzial select:focus-visible { outline: 3px solid var(--aktion); outline-offset: 1px; }
+    .seite-potenzial input:focus-visible, .seite-potenzial textarea:focus-visible { outline: 3px solid var(--aktion); outline-offset: 1px; }
     .seite-potenzial .opt { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-bottom: 8px; }
     .seite-potenzial .opt input { margin-top: 5px; width: 18px; height: 18px; accent-color: var(--aktion); flex: none; }
     .seite-potenzial .zeile { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .seite-potenzial .anbieter { background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: 18px 20px; }
-    .seite-potenzial .anbieter p { margin-bottom: 8px; }
-
-    .seite-potenzial .sig-wrap { border: 2px dashed #6B7685; border-radius: 4px; background: var(--weiss); position: relative; }
-    .seite-potenzial canvas#sig { display: block; width: 100%; height: 160px; touch-action: none; cursor: crosshair; }
-    .seite-potenzial .sig-hint { position: absolute; left: 12px; top: 8px; font-size: 14px; color: var(--text-leise); pointer-events: none; }
-    .seite-potenzial .sig-wrap.fertig .sig-hint { display: none; }
-    .seite-potenzial .sig-linie { position: absolute; left: 12px; right: 12px; bottom: 34px; border-bottom: 1px solid var(--linie); pointer-events: none; }
 
     .seite-potenzial .aktionen { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-    .seite-potenzial .btn { display: inline-flex; align-items: center; font: 600 16px "Source Sans 3", Arial, sans-serif; min-height: 46px; padding: 0 22px; border-radius: 4px; border: 2px solid var(--aktion); background: var(--aktion); color: var(--weiss); cursor: pointer; text-decoration: none; }
+    .seite-potenzial .btn { display: inline-flex; align-items: center; justify-content: center; font: 600 16px "Source Sans 3", Arial, sans-serif; min-height: 46px; padding: 0 22px; border-radius: 4px; border: 2px solid var(--aktion); background: var(--aktion); color: var(--weiss); cursor: pointer; text-decoration: none; }
     .seite-potenzial .btn:hover { background: #09585F; border-color: #09585F; }
     .seite-potenzial .btn.zweit { background: var(--weiss); color: var(--aktion); }
     .seite-potenzial .btn.zweit:hover { background: #E4F1F2; }
-    .seite-potenzial .btn.klein-btn { min-height: 36px; padding: 0 14px; font-size: 16px; margin-top: 8px; }
     /* mit .seite-potenzial davor, weil die Startseite ebenfalls ein Element mit id="meldung" hat */
     .seite-potenzial #meldung { margin-top: 16px; padding: 12px 16px; border-left: 4px solid var(--aktion); background: var(--flaeche); border-radius: 4px; min-height: 48px; }
     .seite-potenzial #meldung.fehler { border-left-color: #9B1C1C; }
@@ -485,40 +488,32 @@
     .seite-potenzial footer nav ul { margin: 0; gap: 22px; } /* gap: sonst greift bis 860 px die gemeinsame Regel nav ul { gap: 16px } */
 
     .seite-potenzial .nur-druck { display: none; }
-
-    /* Ehemalige style-Angaben dieser Seite (höhere Gewichtung, damit sie auch die Druckregeln schlagen) */
     .seite-potenzial h2.kein-abstand-oben { margin-top: 0; }
-    .seite-potenzial #annahme-titel { margin-top: 16px; }
-    .seite-potenzial .anbieter h3 { margin-top: 0; }
-    .seite-potenzial #sig-d { margin: 6px 0 0; }
 
     @media (max-width: 860px) {
       .seite-potenzial .doc { padding: 24px 20px; }
       .seite-potenzial h1 { font-size: 28px; } .seite-potenzial h2 { font-size: 20px; }
-      .seite-potenzial .zwei, .seite-potenzial .zeile { grid-template-columns: 1fr; }
+      .seite-potenzial .angebot-kurz { grid-template-columns: 1fr; gap: 16px; }
+      .seite-potenzial .zeile { grid-template-columns: 1fr; gap: 0; }
     }
-    /* Druckansicht (nur diese Seite; Seitenränder über die benannte Druckseite „angebot“, damit andere Seiten nicht betroffen sind) */
+    @media (max-width: 560px) {
+      .seite-potenzial .kauf-knoepfe .btn, .seite-potenzial .aktionen .btn { width: 100%; }
+    }
+    /* Druckansicht (nur diese Seite; Seitenränder über die benannte Druckseite „angebot“, damit andere Seiten nicht betroffen sind).
+       potenzial-check.js klappt vor dem Drucken alle Details auf. */
     .seite-potenzial { page: angebot; }
     @page angebot { margin: 16mm; }
     @media print {
-      body.seite-potenzial { background: #fff; font-size: 11pt; }
-      .seite-potenzial .demo, .seite-potenzial header.kopf, .seite-potenzial footer, .seite-potenzial .skip, .seite-potenzial .aktionen, .seite-potenzial #meldung, .seite-potenzial .btn, .seite-potenzial .sig-hint, .seite-potenzial .nicht-druck { display: none !important; }
+      body.seite-potenzial { background: #fff; font-size: 10pt; }
+      .seite-potenzial .demo, .seite-potenzial header.kopf, .seite-potenzial footer, .seite-potenzial .skip, .seite-potenzial .btn, .seite-potenzial .nicht-druck { display: none !important; }
       .seite-potenzial .nur-druck { display: block; }
       .seite-potenzial main { padding: 0; } .seite-potenzial .wrap { max-width: none; padding: 0; }
       .seite-potenzial .doc { border: 0; padding: 0; }
-      .seite-potenzial h2 { page-break-after: avoid; } .seite-potenzial .tab, .seite-potenzial fieldset, .seite-potenzial .anbieter { page-break-inside: avoid; }
-      .seite-potenzial .annahme { page-break-before: always; }
-      .seite-potenzial input, .seite-potenzial textarea, .seite-potenzial select { border: 0; border-bottom: 1px solid #000; border-radius: 0; padding: 2px 0; }
-      .seite-potenzial .sig-wrap { border: 1px solid #000; }
-      .seite-potenzial .zwei { grid-template-columns: 1fr 1.6fr; gap: 16px; }
-      .seite-potenzial .zeile { grid-template-columns: 1fr 1fr; }
-      .seite-potenzial fieldset { border: 1px solid #999; padding: 10px 12px 2px; margin-bottom: 10px; }
-      .seite-potenzial .feld { margin-bottom: 8px; }
-      .seite-potenzial canvas#sig { display: none; }
-      .seite-potenzial #sigimg { display: block; width: 100%; height: 110px; object-fit: contain; object-position: left; }
-      .seite-potenzial #sigimg[src=""], .seite-potenzial #sigimg:not([src]) { visibility: hidden; }
-      .seite-potenzial .sig-wrap { min-height: 110px; }
-      body.seite-potenzial { font-size: 10pt; } .seite-potenzial label, .seite-potenzial .lbl { font-size: 10pt; margin-bottom: 2px; } .seite-potenzial textarea { min-height: 40px; } .seite-potenzial .feld { margin-bottom: 5px; } .seite-potenzial .opt { margin-bottom: 4px; }
+      .seite-potenzial details { border: 0; background: none; margin: 0; }
+      .seite-potenzial summary { padding: 0; } .seite-potenzial details summary::after, .seite-potenzial details[open] summary::after { content: none; }
+      .seite-potenzial summary h3 { font-size: 13pt; margin-top: 14px; }
+      .seite-potenzial details > div { padding: 0; }
+      .seite-potenzial h2 { page-break-after: avoid; } .seite-potenzial .tab, .seite-potenzial .kaufbox { page-break-inside: avoid; }
       .seite-potenzial h1 { font-size: 26pt; } .seite-potenzial h2 { font-size: 16pt; margin-top: 18px; }
     }
 
