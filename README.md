@@ -20,7 +20,7 @@ Alternativ lokale Vorschau mit Node.js (ohne Zusatzpakete): `node .claude/vorsch
 | `.github/workflows/pages.yml` | veröffentlicht `website/` mit GitHub Pages |
 | `docs/` | Konzept, Projektanweisungen, Designsystem, Entscheidungen, Abnahme-Checkliste, Bildnachweise, Ordnerstruktur |
 | `CLAUDE.md` | Regeln für Claude (Kurzfassung aus `docs/`) |
-| `vorschau/` | ganzseitige Screenshots der ursprünglichen 7 Seiten bei 1440 px (Rechner), 768 px (Tablet), 390 px (Handy), Stand 25.11.2026 |
+| `vorschau/` | 45 ganzseitige Screenshots aller 15 Seiten bei 1440 px (Rechner), 768 px (Tablet), 390 px (Handy), Stand 26.11.2026; Warenkorb mit Beispielinhalt |
 | `archiv/hero-entwuerfe/` | verworfene eigene Entwürfe für das Startbild (SVG) |
 
 Das frühere Titelbild (Pixabay) liegt nur noch außerhalb des Projekts in `C:\projekte\klarwerk_ai_privat\` und ist nicht Teil des Repositorys.
@@ -46,4 +46,4 @@ Fertig und geprüft (siehe `docs/Abnahme-Checkliste.md`). Offene Punkte: Impress
 
 26.11.2026: Produktseiten, Warenkorb mit Summen (localStorage), Veröffentlichung mit GitHub Pages.
 
-26.11.2026: Design-Überarbeitung (Punkte 1 bis 16, einzeln freigegeben, siehe `docs/Entscheidungsprotokoll.md`). Die Screenshots in `vorschau/` zeigen noch den Stand vom 25.11.2026.
+26.11.2026: Design-Überarbeitung (Punkte 1 bis 16, einzeln freigegeben, siehe `docs/Entscheidungsprotokoll.md`). Danach Rückweg-Link auf `potenzial-check.html` korrigiert und Screenshots in `vorschau/` für alle 15 Seiten neu erzeugt.

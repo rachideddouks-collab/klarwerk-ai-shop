@@ -13,7 +13,7 @@
 | Alle Bilder lizenzfrei, Bildnachweis | erfüllt (alle Grafiken selbst erstellt, seit 25.11.2026) |
 | Alternativtexte für Bilder | erfüllt (kein Bild ohne Alt-Attribut; die vier Team-Avatare sind Schmuck und haben leeren Alt-Text, der Name steht darunter) |
 | Sprache der Seiten (lang=de) | erfüllt |
-| Links und Anker | geprüft 26.11.2026 auf allen 15 Seiten: keine defekten internen Links. Bekannt: Auf `potenzial-check.html` führt „Zurück zur Orientierung“ zur Service-Seite (bestand schon vorher, offen) |
+| Links und Anker | geprüft 26.11.2026 auf allen 15 Seiten: keine defekten internen Links. „Zurück zur Orientierung“ auf `potenzial-check.html` führt seit 26.11.2026 zur Orientierung der Startseite (vorher zur Service-Seite) |
 | Kontrast WCAG AA | Text auf Weiß 17,4 : 1 · Hinweise 7,5 : 1 · Weiß auf Nachtblau 14,7 : 1 · Weiß auf Petrolgrün 6,2 : 1 · Hell auf Nachtblau 11,9 : 1 · Text auf Hellblau (Kontaktbox) 14,6 : 1 · Petrolgrün auf Hellblau 5,2 : 1 (alle über 4,5 : 1) |
 | Tippflächen | keine Links, Knöpfe oder Aufklapper unter 24 px Höhe (Links im Fließtext ausgenommen) |
 | Schriftgrößen | sechs Stufen: 14, 16, 20, 28, 40, 56 px (Mindestschrift 14 px) |

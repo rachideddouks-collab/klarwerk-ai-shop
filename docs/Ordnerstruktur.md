@@ -25,7 +25,7 @@ Klarwerk-AI/
 │   ├── leistungen/ (index.html, paketumfang.html: Kurzübersicht mit Links auf die Produktseiten)
 │   ├── produkte/ (strategie.html, governance.html, automatisierung.html, agenten-bi.html, head-of-ai.html; seit 26.11.2026)
 │   └── service/ (index.html, faq.html)
-├── vorschau/ (21 ganzseitige Screenshots: 7 Seiten x 1440, 768, 390 px, Stand 25.11.2026)
+├── vorschau/ (45 ganzseitige Screenshots: 15 Seiten x 1440, 768, 390 px, Stand 26.11.2026; Namen seite_geraet-breite.jpg, Produktseiten als produkt-…)
 └── archiv/ (hero-entwuerfe/: verworfene SVG-Entwürfe)
 ```
 Außerhalb des Projekts: `C:\projekte\klarwerk_ai_privat\` (Pixabay-Original und früheres Titelfoto, nicht im Repository).
