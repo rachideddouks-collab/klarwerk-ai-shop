@@ -31,7 +31,7 @@ Das frühere Titelbild (Pixabay) liegt nur noch außerhalb des Projekts in `C:\p
 - `warenkorb.html` Warenkorb mit Summen, Monatswahl für Head of AI und Demo-Bestellung
 - `impressum.html`, `datenschutz.html` Platzhalterseiten
 - `orientierung/reifegrad-test.html` KI-Reifegrad-Test (12 Fragen, Ergebnis per E-Mail)
-- `orientierung/potenzial-check.html` Angebot KI-Potenzial-Check (Kurzüberblick mit Preis, Details zum Aufklappen, Kurzanfrage per E-Mail)
+- `orientierung/potenzial-check.html` Angebot KI-Startworkshop (Kurzüberblick mit Preis, Details zum Aufklappen, Kurzanfrage per E-Mail)
 - `leistungen/index.html` Paketübersicht (Tabelle), `leistungen/paketumfang.html` Kurzübersicht mit Links zu den Produktseiten
 - `service/index.html` Zusagen, Ablauf, Support; `service/faq.html` 7 häufige Fragen
 

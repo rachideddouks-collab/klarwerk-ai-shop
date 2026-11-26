@@ -1,4 +1,4 @@
-/* Klarwerk AI · Angebot KI-Potenzial-Check (orientierung/potenzial-check.html)
+/* Klarwerk AI · Angebot KI-Startworkshop (orientierung/potenzial-check.html)
    Kurzanfrage: Pflichtfelder prüfen und einen E-Mail-Entwurf öffnen. Nichts wird automatisch übertragen.
    Beim Drucken werden alle Details aufgeklappt. Läuft nur, wenn es das Formular #anfrage-form gibt. */
 (function () {
@@ -23,12 +23,12 @@
     e.preventDefault();
     if (!form.reportValidity()) { melde("Bitte füllen Sie alle Pflichtfelder (*) aus.", true); return; }
     var fmt = form.querySelector("input[name=Format]:checked");
-    var body = "Anfrage: KI-Potenzial-Check (Demo, alle Angaben erfunden)\n" +
+    var body = "Anfrage: KI-Startworkshop (Demo, alle Angaben erfunden)\n" +
       "Festpreis 1.290,00 EUR netto zzgl. MwSt., Angebot vom 24.11.2026\n\n" +
       "Firma: " + v("firma") + "\nAnsprechperson: " + v("person") + "\nE-Mail: " + v("mail") +
       "\nWorkshop-Format: " + (fmt ? fmt.value : "") + "\nWunschzeitraum: " + v("zeitraum") +
       "\nAnmerkungen: " + v("anm") + "\n";
     melde("Ihr E-Mail-Programm öffnet einen Entwurf mit Ihren Angaben. Bitte prüfen Sie ihn und senden Sie ihn selbst ab.");
-    location.href = "mailto:kontakt@klarwerk-ai.example?subject=" + encodeURIComponent("Anfrage KI-Potenzial-Check: " + v("firma")) + "&body=" + encodeURIComponent(body);
+    location.href = "mailto:kontakt@klarwerk-ai.example?subject=" + encodeURIComponent("Anfrage KI-Startworkshop: " + v("firma")) + "&body=" + encodeURIComponent(body);
   });
 })();
