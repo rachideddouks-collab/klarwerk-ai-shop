@@ -1,0 +1,47 @@
+# Klarwerk AI · Dateien, die Git nie sichern soll
+
+# --- Geheimnisse: Passwörter, Schlüssel, Zugangsdaten ---
+.env
+.env.*
+!.env.example
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa*
+id_ed25519*
+*.kdbx
+secrets*
+*secret*
+credentials*
+*credentials*.json
+*.token
+.npmrc
+.netrc
+
+# --- Lokale Einstellungen von Claude (können persönliche Rechte und Pfade enthalten) ---
+.claude/settings.local.json
+.claude/*.local.*
+
+# --- Betriebssystem und Editoren ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.lnk
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Temporäres, Protokolle, Pakete ---
+*.log
+*.tmp
+*.bak
+node_modules/
+
+# --- Fremde Bilder (Pixabay): nur privat, liegen in C:\projekte\klarwerk_ai_privat ---
+quellen/
+archiv/startbild-pixabay/

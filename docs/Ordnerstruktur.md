@@ -1,0 +1,32 @@
+# Ordnerstruktur
+
+```
+Klarwerk-AI/
+├── README.md
+├── CLAUDE.md (Regeln für Claude, Kurzfassung aus docs/)
+├── .claude/ (launch.json, vorschau-server.js: lokale Vorschau unter http://127.0.0.1:8000)
+├── docs/
+│   ├── Konzept_Klarwerk-AI.md
+│   ├── Projektanweisungen_Klarwerk-AI.md
+│   ├── Designsystem_Stil-C.md
+│   ├── Entscheidungsprotokoll.md
+│   ├── Abnahme-Checkliste.md
+│   ├── Bildnachweise_und_Lizenzen.md
+│   └── Ordnerstruktur.md
+├── website/
+│   ├── index.html
+│   ├── warenkorb.html (Warenkorb-Seite, Inhalt baut js/app.js auf; seit 26.11.2026)
+│   ├── css/klarwerk.css
+│   ├── js/ (app.js: Handy-Menü, Produktliste mit Preisen, Warenkorb und Warenkorb-Seite, alle Seiten · reifegrad-test.js · potenzial-check.js)
+│   ├── fonts/ (SourceSans3.ttf, OFL.txt)
+│   ├── images/ (start.svg, produkt-1..5.svg, favicon.svg, BILDNACHWEIS.txt)
+│   ├── orientierung/ (reifegrad-test.html, potenzial-check.html)
+│   ├── leistungen/ (index.html, paketumfang.html: Kurzübersicht mit Links auf die Produktseiten)
+│   ├── produkte/ (strategie.html, governance.html, automatisierung.html, agenten-bi.html, head-of-ai.html; seit 26.11.2026)
+│   └── service/ (index.html, faq.html)
+├── vorschau/ (21 ganzseitige Screenshots: 7 Seiten x 1440, 768, 390 px, Stand 25.11.2026)
+└── archiv/ (hero-entwuerfe/: verworfene SVG-Entwürfe)
+```
+Außerhalb des Projekts: `C:\projekte\klarwerk_ai_privat\` (Pixabay-Original und früheres Titelfoto, nicht im Repository).
+
+Regel: Jede Information gehört in genau einen Bereich (Orientierung, Leistungen, Service). Der Leistungsumfang je Paket steht nur auf der jeweiligen Produktseite. Das gemeinsame Design liegt in `website/css/klarwerk.css`, das JavaScript in `website/js/` (eingebunden im `<head>` mit `defer`). In den HTML-Seiten stehen weder `<style>`, `style="…"` noch `<script>`-Code.

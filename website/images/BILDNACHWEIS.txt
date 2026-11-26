@@ -1,0 +1,5 @@
+Alle Grafiken in diesem Ordner sind selbst erstellt (SVG):
+- start.svg: Titelbild (Fabrik, Daten, KI-Baustein, Roadmap), erstellt am 25.11.2026
+- produkt-1..5.svg: Produktbilder
+- favicon.svg: Logo für den Browser-Tab
+Das frühere Titelbild (Pixabay, Gerd Altmann/geralt, Pixabay Content License) wird nicht mehr verwendet und ist nicht Teil dieser Website.

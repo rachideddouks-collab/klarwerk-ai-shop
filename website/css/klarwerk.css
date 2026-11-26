@@ -1,0 +1,718 @@
+    /* Schrift lokal eingebunden (Source Sans 3, SIL Open Font License): keine Verbindung zu fremden Servern */
+    @font-face {
+      font-family: "Source Sans 3";
+      src: url("../fonts/SourceSans3.ttf") format("truetype");
+      font-weight: 200 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --marke: #12284C;      /* Hauptfarbe: Logo, Kopfbereich, Überschriften */
+      --aktion: #0B6B73;     /* Akzent: nur Buttons und Links */
+      --flaeche: #F4F6F8;    /* Hintergrund */
+      --weiss: #FFFFFF;
+      --text: #1A1A1A;       /* Fließtext */
+      --text-leise: #4A5568; /* Hinweise */
+      --linie: #D5DBE3;
+      --hinweis: #FFD966;    /* nur Demo-Leiste */
+      --teal: #6FC2C9;       /* große Ziffern und Balken auf dunklem Grund */
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--flaeche);
+    }
+
+    h1, h2, h3 { color: var(--marke); line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 40px; font-weight: 700; }
+    h2 { font-size: 32px; font-weight: 700; }
+    h3 { font-size: 24px; font-weight: 600; }
+    p  { margin: 0 0 1em; max-width: 70ch; }
+    .klein { font-size: 14px; color: var(--text-leise); }
+
+    a { color: var(--aktion); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--marke); outline-offset: 3px; }
+
+    .skip {
+      position: absolute; left: 8px; top: -60px;
+      background: var(--weiss); color: var(--marke);
+      padding: 8px 14px; border-radius: 6px; z-index: 10; font-weight: 600;
+    }
+    .skip:focus { top: 8px; }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 64px 0; }
+
+    /* 0 · Demo-Hinweis */
+    .demo {
+      background: var(--text); color: var(--hinweis);
+      text-align: center; font-size: 14px; font-weight: 600; padding: 6px 12px;
+    }
+
+    /* 1 · Kopfbereich */
+    header.kopf { background: var(--marke); color: var(--weiss); }
+    .kopf .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--weiss); text-decoration: none; font-size: 24px; font-weight: 700;
+    }
+    .logo span { font-weight: 400; opacity: .9; }
+    nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
+    nav a { color: var(--weiss); text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; }
+    nav a:hover { border-bottom-color: var(--weiss); }
+    nav a:focus-visible, .logo:focus-visible, .warenkorb:focus-visible { outline-color: var(--weiss); }
+    .warenkorb {
+      background: transparent; color: var(--weiss); font: inherit; font-weight: 600;
+      border: 2px solid var(--weiss); border-radius: 999px; padding: 6px 16px; cursor: pointer;
+    }
+    .warenkorb:hover { background: var(--weiss); color: var(--marke); }
+
+    /* 2 · Startbereich */
+    .start { background: var(--weiss); border-bottom: 1px solid var(--linie); }
+    .start .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .tag {
+      display: inline-block; background: #E4ECF7; color: var(--marke);
+      font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .start h1 { font-size: 48px; }
+    .start p.lead { font-size: 18px; }
+    .btn {
+      display: inline-block; background: var(--aktion); color: var(--weiss);
+      font: inherit; font-weight: 600; text-decoration: none;
+      border: 0; border-radius: 8px; padding: 12px 24px; cursor: pointer;
+    }
+    .btn:hover { background: #09585F; }
+    .btn:focus-visible { outline-color: var(--marke); }
+    .start svg { width: 100%; height: auto; border-radius: 16px; display: block; }
+
+    /* 2 · Orientierung */
+    .orient { background: #E4ECF7; border-bottom: 1px solid var(--linie); }
+    .orient-liste { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .orient-liste li { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; align-items: flex-start; }
+    .orient-liste h3 { margin: 0 0 8px; }
+    .orient-liste p { margin: 0 0 16px; flex-grow: 1; }
+    .orient-liste .schritt-tag { flex-grow: 0; font-size: 14px; font-weight: 600; color: var(--text-leise); margin-bottom: 6px; }
+    .kontakt { padding: 0 0 64px; }
+    .sr-nur { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* 3 · Produktbereich */
+    .produkte .intro { margin-bottom: 32px; }
+    .raster { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; list-style: none; margin: 0; padding: 0; }
+    .karte {
+      background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius);
+      padding: 20px; display: flex; flex-direction: column;
+    }
+    .karte { grid-column: span 2; }
+    .karte:nth-child(4) { grid-column: 2 / span 2; }
+    .karte:nth-child(5) { grid-column: 4 / span 2; }
+    .bild { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; margin-bottom: 16px; }
+    .kat { font-size: 14px; font-weight: 600; color: var(--text-leise); margin: 0 0 4px; }
+    .karte h3 { font-size: 20px; margin-bottom: 6px; }
+    .karte .info { color: var(--text); flex-grow: 1; margin-bottom: 14px; }
+    .preis { font-size: 16px; font-weight: 600; color: var(--text); margin: 0; line-height: 1.2; }
+    .proz { font-size: 16px; font-weight: 600; }
+    .preis-hinweis { font-size: 14px; color: var(--text-leise); margin: 0 0 14px; }
+    .karte .btn { width: 100%; text-align: center; }
+    .meldung {
+      margin-top: 24px; padding: 12px 16px; border-left: 4px solid var(--aktion);
+      background: var(--weiss); border-radius: 4px; min-height: 48px;
+    }
+
+    /* 4 · Service */
+    .service { background: var(--weiss); border-top: 1px solid var(--linie); border-bottom: 1px solid var(--linie); }
+    .service h3.detail { font-size: 24px; margin: 0 0 8px; }
+    .service h4 { font-size: 20px; font-weight: 600; color: var(--marke); line-height: 1.2; margin: 40px 0 12px; }
+
+    .versprechen, .optionen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .versprechen li, .optionen li { background: var(--flaeche); border: 1px solid var(--linie); border-top: 4px solid var(--akzent-petrol, #0B6B73); border-radius: var(--radius); padding: 16px; }
+    .versprechen strong, .optionen strong { display: block; color: var(--marke); font-size: 18px; margin-bottom: 4px; }
+    .versprechen p, .optionen p { margin: 0; font-size: 16px; }
+    .optionen { grid-template-columns: repeat(3, 1fr); }
+    .optionen .opt-preis { margin-top: 8px; font-size: 14px; color: var(--text-leise); }
+    .mitwirkung { max-width: 70ch; padding-left: 20px; margin: 0; }
+    .mitwirkung li { margin-bottom: 6px; }
+    .support-tabelle { max-width: 100%; }
+    .support-tabelle + p { margin-top: 16px; }
+    @media (max-width: 900px) {
+      .service .tabelle { display: block; overflow-x: auto; }
+      .versprechen, .optionen { grid-template-columns: 1fr; }
+    }
+    .schritte { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .schritte li { counter-increment: s; background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: 16px; }
+    .schritte li::before {
+      content: counter(s); display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%; background: var(--marke); color: var(--weiss); font-weight: 700; margin-bottom: 10px;
+    }
+    .schritte strong { display: block; color: var(--marke); font-size: 18px; margin-bottom: 4px; }
+    .schritte p { margin: 0 0 6px; font-size: 16px; }
+    .schritte .zeit { font-size: 14px; color: var(--text-leise); margin: 0; }
+    .tabelle { width: 100%; border-collapse: collapse; background: var(--weiss); }
+    .tabelle caption { text-align: left; font-size: 14px; color: var(--text-leise); padding-bottom: 8px; }
+    .tabelle th, .tabelle td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--linie); }
+    .tabelle thead th { background: var(--marke); color: var(--weiss); font-weight: 600; }
+    .tabelle tbody th { font-weight: 600; color: var(--marke); }
+    details { border: 1px solid var(--linie); border-radius: var(--radius); background: var(--flaeche); margin-bottom: 10px; }
+    summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: var(--marke); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--aktion); }
+    details[open] summary::after { content: "–"; }
+    details > div { padding: 0 18px 14px; }
+    details ul { margin: 0; padding-left: 20px; max-width: 70ch; }
+    details p { margin-bottom: 8px; }
+    .testbox { background: #E4ECF7; border: 1px solid var(--linie); border-radius: var(--radius); padding: 24px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+    .testbox h3 { margin: 0 0 4px; }
+    .testbox p { margin: 0; }
+    .kontaktbox { margin-top: 40px; background: var(--marke); color: var(--weiss); border-radius: var(--radius); padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+    .kontaktbox h3 { color: var(--weiss); margin: 0 0 6px; }
+    .kontaktbox p { margin: 0; color: #E1E8F4; }
+    .kontaktbox .btn { background: var(--weiss); color: var(--marke); }
+    .kontaktbox .btn:hover { background: #E4ECF7; }
+    .kontaktbox .btn:focus-visible { outline-color: var(--weiss); }
+    .btn-zweit { background: var(--weiss); color: var(--aktion); border: 2px solid var(--aktion); padding: 10px 22px; margin-left: 10px; }
+    .btn-zweit:hover { background: #E4F1F2; }
+
+    /* Über uns */
+    .ueber .wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: start; }
+    .team { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .team li { text-align: left; }
+    .portrait {
+      aspect-ratio: 3 / 4; background: #E4ECF7; border-radius: 8px; margin-bottom: 10px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--marke);
+    }
+    .portrait svg { width: 56%; height: auto; }
+    .portrait small { font-size: 14px; color: var(--text-leise); }
+    .team strong { display: block; color: var(--marke); font-size: 16px; line-height: 1.3; }
+    .team span { font-size: 14px; color: var(--text-leise); }
+
+    /* 5 · Fußbereich */
+    footer { background: var(--marke); color: var(--weiss); padding: 40px 0; }
+    footer h2 { color: var(--weiss); font-size: 20px; }
+    footer a { color: var(--weiss); }
+    footer .platzhalter { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+    footer .platzhalter div { background: rgba(255,255,255,.08); border-radius: 8px; padding: 16px 20px; }
+    footer .platzhalter h3 { color: var(--weiss); font-size: 18px; }
+    footer p { color: #E1E8F4; }
+    footer nav ul { margin-bottom: 8px; }
+
+    /* Handy */
+    @media (max-width: 860px) {
+      h1, .start h1 { font-size: 34px; }
+      h2 { font-size: 28px; }
+      .start .wrap, footer .platzhalter, .ueber .wrap { grid-template-columns: 1fr; }
+      .schritte, .orient-liste { grid-template-columns: 1fr; }
+      .btn-zweit { margin-left: 0; margin-top: 10px; }
+      .start .btn { margin-right: 10px; }
+      .start .btn-zweit { margin-right: 0; }
+      .kopf .wrap { gap: 12px 20px; }
+      nav ul { gap: 16px; }
+      .raster { grid-template-columns: 1fr; }
+      .karte, .karte:nth-child(n+4) { grid-column: auto; }
+      section { padding: 44px 0; }
+    }
+    @media (min-width: 561px) and (max-width: 860px) {
+      .kopf .wrap .logo { order: 1; }
+      .kopf .wrap .warenkorb { order: 2; margin-left: auto; }
+      .kopf .wrap nav { order: 3; flex-basis: 100%; }
+    }
+    @media (min-width: 861px) and (max-width: 1000px) {
+      .raster { grid-template-columns: repeat(2, 1fr); }
+      .karte, .karte:nth-child(n+4) { grid-column: auto; }
+    }
+    @media (max-width: 520px) { .team { grid-template-columns: repeat(2, 1fr); } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    /* Unterseiten */
+    .service .sub { font-size: 20px; font-weight: 600; color: var(--marke); line-height: 1.2; margin: 40px 0 12px; }
+    .brot { font-size: 14px; margin: 0 0 16px; }
+    .seitenkopf h1 { margin-bottom: 8px; }
+    .weiter { margin-top: 40px; }
+    nav a[aria-current="page"] { border-bottom-color: var(--weiss); }
+    .seitenkopf .lead, .service .lead { font-size: 18px; }
+
+    /* ===== Stil C: kontrastreich und kompakt (nur Optik, Inhalte unverändert) ===== */
+    :root { --radius: 4px; --dunkel-linie: #2B4670; --hell-auf-dunkel: #E1E8F4; }
+    section { padding: 56px 0; }
+
+    /* Überschriften: markant */
+    h1 { font-size: 44px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.015em; }
+    h3 { letter-spacing: -0.005em; }
+    .produkte h2::before, .orient h2::before, .ueber h2::before, .service h2:not(.sub)::before {
+      content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 14px;
+    }
+
+    /* Kopf: dunkel, mit feiner Linie */
+    header.kopf { border-bottom: 1px solid var(--dunkel-linie); }
+    .warenkorb { border-radius: var(--radius); }
+    .skip { border-radius: var(--radius); }
+
+    /* Start: dunkle Fläche, große Aussage */
+    .start { background: var(--marke); border-bottom: 0; padding: 72px 0; }
+    .start h1 { color: var(--weiss); font-size: 56px; line-height: 1.05; }
+    .start p.lead { color: var(--hell-auf-dunkel); font-size: 20px; }
+    .tag { background: rgba(255,255,255,.12); color: var(--weiss); border-radius: var(--radius); }
+    .start .btn { background: var(--weiss); color: var(--marke); }
+    .start .btn:hover { background: #E4ECF7; }
+    .start .btn-zweit { background: transparent; color: var(--weiss); border-color: var(--weiss); }
+    .start .btn-zweit:hover { background: var(--weiss); color: var(--marke); }
+    .start :focus-visible, .seitenband :focus-visible, .kontaktbox :focus-visible { outline-color: var(--weiss); }
+    .start svg { border-radius: var(--radius); border: 1px solid var(--dunkel-linie); }
+
+    /* Seitenband der Unterseiten */
+    section.seitenband { background: var(--marke); color: var(--weiss); padding: 40px 0 36px; border-top: 1px solid var(--dunkel-linie); }
+    .seitenband h1 { color: var(--weiss); margin-bottom: 10px; }
+    .seitenband .brot, .seitenband .brot a { color: var(--hell-auf-dunkel); }
+    .seitenband .lead { color: var(--hell-auf-dunkel); margin: 0; }
+    .seitenband + .service { border-top: 0; }
+
+    /* Buttons: eckig */
+    .btn { border-radius: var(--radius); }
+    .btn-zweit { background: var(--weiss); }
+
+    /* Karten und Flächen: Kanten statt Rundungen */
+    .orient-liste li, .karte, .schritte li, .versprechen li, .optionen li, .testbox, .kontaktbox, details, .meldung {
+      border-radius: var(--radius);
+    }
+    .orient-liste li, .karte { border-top: 4px solid var(--marke); }
+    .bild { border-radius: 2px; }
+    .karte h3 { font-size: 21px; }
+    .karte .btn { background: var(--marke); }
+    .karte .btn:hover { background: #1B3A6B; }
+    .raster { gap: 20px; }
+
+    /* Service: Ziffern groß, Linien klar */
+    .versprechen li, .optionen li { border-top-color: var(--marke); }
+    .schritte li { border-top: 4px solid var(--marke); }
+    .schritte li::before {
+      width: auto; height: auto; border-radius: 0; background: none;
+      justify-content: flex-start; font-size: 40px; line-height: 1; color: var(--aktion); margin-bottom: 8px;
+    }
+    .tabelle { border-top: 4px solid var(--marke); }
+    .tabelle thead th { background: var(--marke); }
+    details { background: var(--weiss); border-left: 4px solid var(--marke); }
+    .service .sub { margin-top: 48px; }
+
+    /* Teamfotos */
+    .portrait { border-radius: 2px; }
+
+    /* Kontaktbox und Fuß */
+    .kontaktbox { padding: 32px 36px; }
+    .kontaktbox h3 { font-size: 28px; }
+    footer .platzhalter div { border-radius: var(--radius); }
+    footer { border-top: 1px solid var(--dunkel-linie); }
+
+    @media (max-width: 860px) {
+      h1, .start h1 { font-size: 36px; }
+      h2 { font-size: 30px; }
+      .start { padding: 48px 0; }
+      .kontaktbox h3 { font-size: 24px; }
+    }
+
+    /* Produktkarten: alle fünf in einer Reihe, gleiche Breite und Höhe (ab 1101 px Breite) */
+    @media (min-width: 1101px) {
+      .produkte .wrap { max-width: 1360px; }
+      .raster { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+      .karte, .karte:nth-child(4), .karte:nth-child(5) { grid-column: auto; padding: 16px; }
+      .karte h3 { font-size: 19px; min-height: calc(3 * 1.2em); margin-bottom: 8px; }
+      .karte .info { font-size: 15px; line-height: 1.5; }
+      .karte .bild { margin-bottom: 12px; }
+    }
+
+    /* Startbild (Foto) */
+    .start img { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--dunkel-linie); aspect-ratio: 4 / 3; object-fit: cover; }
+
+    /* 7 · Bundles (25.11.2026) */
+    .bundles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 16px 0 32px; padding: 0; align-items: stretch; }
+    .bundles .karte, .bundles .karte:nth-child(n) { grid-column: auto; padding: 20px; }
+    .bundles .karte h3 { min-height: 0; }
+    .bundles .karte .info { font-size: 16px; }
+    @media (max-width: 900px) { .bundles { grid-template-columns: 1fr; } }
+
+    /* ===== 8 · Handy-Menü (Schaltfläche „Menü“) =====
+       Nur bis 860 px (vorhandener Umbruch der Navigation) und nur mit JavaScript.
+       Ohne JavaScript bleibt die Schaltfläche versteckt (hidden) und die Navigation sichtbar.
+       Im HTML steht die Schaltfläche direkt vor der Navigation, damit Tab nach dem Öffnen in die Menü-Links führt.
+       Die sichtbare Reihenfolge (Logo, Warenkorb, Menü, Navigation) regelt order. */
+    .menue-btn {
+      background: transparent; color: var(--weiss); font: inherit; font-weight: 600;
+      border: 2px solid var(--weiss); border-radius: var(--radius);
+      min-width: 44px; min-height: 44px; padding: 6px 16px; cursor: pointer;
+    }
+    .menue-btn:hover, .menue-btn[aria-expanded="true"] { background: var(--weiss); color: var(--marke); }
+    .menue-btn:focus-visible { outline-color: var(--weiss); }
+    .menue-btn[hidden] { display: none; }
+    @media (min-width: 861px) {
+      .menue-btn { display: none; }
+    }
+    @media (max-width: 860px) {
+      .kopf.menue-js .wrap .logo { order: 1; }
+      .kopf.menue-js .wrap .warenkorb { order: 2; margin-left: auto; }
+      .kopf.menue-js .wrap .menue-btn { order: 3; margin-left: auto; }
+      .kopf.menue-js .wrap:has(.warenkorb) .menue-btn { margin-left: 0; }
+      .kopf.menue-js .wrap nav { order: 4; flex-basis: 100%; display: none; }
+      .kopf.menue-js.offen .wrap nav { display: block; }
+      .kopf.menue-js nav ul { flex-direction: column; gap: 0; padding: 4px 0 6px; }
+      .kopf.menue-js nav a { display: inline-flex; align-items: center; min-height: 44px; }
+    }
+    /* ===== 9 · Seite Reifegrad-Test (orientierung/reifegrad-test.html, body.seite-reifegrad) =====
+       Ehemals <style> in der Seite. Alle Regeln gelten nur mit .seite-reifegrad davor.
+       Zurückgesetzt werden gemeinsame Regeln, die sonst neu wirken würden (section-Abstand, Laufweite, Hover, Fußbereich). */
+    .seite-reifegrad * { min-width: 0; }
+    .seite-reifegrad h1 { font-size: 40px; }
+    .seite-reifegrad h2 { font-size: 24px; letter-spacing: normal; margin-bottom: 4px; }
+    .seite-reifegrad h3 { letter-spacing: normal; }
+    .seite-reifegrad a:hover { text-decoration-thickness: auto; }
+
+    .seite-reifegrad main { padding: 48px 0 64px; }
+    .seite-reifegrad .test { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+    .seite-reifegrad .test > section { padding: 0; }
+    .seite-reifegrad .dim { border-top: 2px solid var(--marke); padding-top: 16px; margin-top: 32px; }
+    .seite-reifegrad .dim > p { color: var(--text-leise); margin: 0 0 8px; }
+    .seite-reifegrad .q { padding: 16px 0; border-bottom: 1px solid var(--linie); }
+    .seite-reifegrad .q h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
+    .seite-reifegrad .opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .seite-reifegrad .opts label { display: flex; align-items: center; min-height: 52px; padding: 8px 12px; border: 1px solid var(--linie); border-radius: 4px; background: var(--weiss); cursor: pointer; font-size: 15px; line-height: 1.3; }
+    .seite-reifegrad .opts label:hover { border-color: var(--marke); }
+    .seite-reifegrad .opts input { position: absolute; opacity: 0; pointer-events: none; }
+    .seite-reifegrad .opts input:checked + label { background: var(--marke); color: var(--weiss); border-color: var(--marke); }
+    .seite-reifegrad .opts input:focus-visible + label { outline: 3px solid var(--aktion); outline-offset: 2px; }
+    .seite-reifegrad .note { font-size: 14px; color: var(--text-leise); margin-top: 28px; }
+
+    .seite-reifegrad .panel { position: sticky; top: 88px; background: var(--marke); color: var(--weiss); border-radius: 4px; padding: 28px; }
+    .seite-reifegrad .gauge { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; }
+    .seite-reifegrad .ring { width: 132px; height: 132px; }
+    .seite-reifegrad .num { font-size: 52px; font-weight: 700; line-height: 1; }
+    .seite-reifegrad .lvl { font-size: 20px; font-weight: 700; margin-top: 6px; }
+    .seite-reifegrad .small { font-size: 14px; opacity: .85; }
+    .seite-reifegrad .bars { margin: 24px 0 8px; display: grid; gap: 10px; }
+    .seite-reifegrad .bar { display: grid; grid-template-columns: 7em minmax(0, 1fr) 3em; gap: 10px; align-items: center; font-size: 15px; }
+    .seite-reifegrad .track { height: 10px; border-radius: 4px; background: rgba(255,255,255,.2); overflow: hidden; }
+    .seite-reifegrad .fill { height: 100%; background: var(--teal); width: 0; transition: width .5s ease; }
+    .seite-reifegrad .bar b { text-align: right; font-variant-numeric: tabular-nums; }
+    .seite-reifegrad .rec { border-top: 1px solid rgba(255,255,255,.4); margin-top: 18px; padding-top: 16px; }
+    .seite-reifegrad .rec p { margin: 6px 0 0; }
+    .seite-reifegrad .rec a { color: var(--weiss); }
+    .seite-reifegrad .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    /* Knöpfe nur im Ergebnisfeld (sonst würden Warenkorb und Menü mit umgestaltet) */
+    .seite-reifegrad .panel button, .seite-reifegrad .panel .btn { font: 600 16px "Source Sans 3", Arial, sans-serif; min-height: 44px; padding: 0 18px; border-radius: 4px; border: 2px solid var(--weiss); background: transparent; color: var(--weiss); cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; }
+    /* gemeinsames .btn:hover (Petrol) hier aufheben: sonst schlechter Kontrast auf dem weißen Knopf */
+    .seite-reifegrad .panel .btn:hover { background: transparent; }
+    .seite-reifegrad .panel button.main, .seite-reifegrad .panel .btn.main, .seite-reifegrad .panel .btn.main:hover { background: var(--weiss); color: var(--marke); }
+    .seite-reifegrad .panel button:focus-visible, .seite-reifegrad .panel .btn:focus-visible { outline-color: var(--weiss); }
+    .seite-reifegrad #arc { transition: stroke-dashoffset .5s ease; }
+    .seite-reifegrad #sendmsg { margin: 12px 0 0; }
+
+    .seite-reifegrad footer { padding: 32px 0; border-top: 0; }
+    .seite-reifegrad footer p { color: #E1E8F4; margin: 12px 0 0; font-size: 14px; }
+    .seite-reifegrad footer nav ul { margin: 0; gap: 22px; } /* gap: sonst greift bis 860 px die gemeinsame Regel nav ul { gap: 16px } */
+
+    @media (max-width: 900px) {
+      .seite-reifegrad .test { grid-template-columns: 1fr; gap: 24px; }
+      .seite-reifegrad .panel { position: relative; top: 0; order: -1; }
+      .seite-reifegrad h1 { font-size: 32px; }
+    }
+    @media (max-width: 600px) {
+      .seite-reifegrad .opts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .seite-reifegrad .ring { width: 104px; height: 104px; }
+      .seite-reifegrad .bar { grid-template-columns: 6em minmax(0, 1fr) 2.8em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .seite-reifegrad .fill, .seite-reifegrad .ring circle { transition: none !important; }
+    }
+
+    /* ===== 10 · Seite Potenzial-Check (orientierung/potenzial-check.html, body.seite-potenzial) =====
+       Ehemals <style> in der Seite. Alle Regeln gelten nur mit .seite-potenzial davor.
+       Listen- und Label-Regeln sind auf das Angebot (.doc) bzw. diese Seite begrenzt, damit Navigation und andere Seiten unverändert bleiben. */
+    .seite-potenzial * { min-width: 0; }
+    .seite-potenzial h1 { font-size: 40px; }
+    .seite-potenzial h2 { font-size: 28px; letter-spacing: normal; margin-top: 40px; }
+    .seite-potenzial h3 { font-size: 18px; font-weight: 600; letter-spacing: normal; margin-top: 24px; }
+    .seite-potenzial .doc ul, .seite-potenzial .doc ol { max-width: 70ch; padding-left: 22px; margin: 0 0 1em; }
+    .seite-potenzial .doc li, .seite-potenzial footer li { margin-bottom: 4px; }
+    .seite-potenzial a:hover { text-decoration-thickness: auto; }
+
+    .seite-potenzial main { padding: 40px 0 64px; }
+    .seite-potenzial .doc { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius); padding: 40px 48px; }
+    .seite-potenzial .doc h1 { margin-bottom: 8px; }
+    .seite-potenzial .meta { color: var(--text-leise); margin-bottom: 24px; }
+    .seite-potenzial .fakten { background: var(--flaeche); border-left: 4px solid var(--aktion); padding: 12px 18px; border-radius: 4px; max-width: none; }
+
+    .seite-potenzial table.tab { border-collapse: collapse; margin: 0 0 1em; width: 100%; max-width: 760px; }
+    @media (max-width: 480px) { .seite-potenzial table.tab { display: block; overflow-x: auto; } .seite-potenzial .tab th, .seite-potenzial .tab td { padding: 8px 10px; } }
+    .seite-potenzial .tab th, .seite-potenzial .tab td { text-align: left; padding: 9px 14px; border: 1px solid var(--linie); vertical-align: top; }
+    .seite-potenzial .tab thead th { background: var(--marke); color: var(--weiss); font-weight: 600; }
+    .seite-potenzial .tab tbody th { font-weight: 600; color: var(--marke); background: var(--flaeche); width: 30%; }
+    .seite-potenzial .tab .r { text-align: right; white-space: nowrap; }
+
+    /* Formular */
+    .seite-potenzial .annahme { border-top: 3px solid var(--marke); margin-top: 48px; padding: 8px 0 0; }
+    .seite-potenzial .zwei { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start; }
+    .seite-potenzial fieldset { border: 1px solid var(--linie); border-radius: var(--radius); padding: 18px 20px 8px; margin: 0 0 20px; }
+    .seite-potenzial legend { font-weight: 700; color: var(--marke); padding: 0 8px; }
+    .seite-potenzial .feld { margin-bottom: 14px; }
+    .seite-potenzial label, .seite-potenzial .lbl { display: block; font-weight: 600; margin-bottom: 4px; }
+    .seite-potenzial .pflicht { color: #9B1C1C; }
+    .seite-potenzial input[type=text], .seite-potenzial input[type=email], .seite-potenzial input[type=tel], .seite-potenzial input[type=date], .seite-potenzial textarea, .seite-potenzial select {
+      width: 100%; font: inherit; color: var(--text); background: var(--weiss);
+      border: 1px solid #6B7685; border-radius: 4px; padding: 9px 12px;
+    }
+    .seite-potenzial textarea { min-height: 80px; resize: vertical; }
+    .seite-potenzial input:focus-visible, .seite-potenzial textarea:focus-visible, .seite-potenzial select:focus-visible { outline: 3px solid var(--aktion); outline-offset: 1px; }
+    .seite-potenzial .opt { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-bottom: 8px; }
+    .seite-potenzial .opt input { margin-top: 5px; width: 18px; height: 18px; accent-color: var(--aktion); flex: none; }
+    .seite-potenzial .zeile { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .seite-potenzial .anbieter { background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: 18px 20px; }
+    .seite-potenzial .anbieter p { margin-bottom: 8px; }
+
+    .seite-potenzial .sig-wrap { border: 2px dashed #6B7685; border-radius: 4px; background: var(--weiss); position: relative; }
+    .seite-potenzial canvas#sig { display: block; width: 100%; height: 160px; touch-action: none; cursor: crosshair; }
+    .seite-potenzial .sig-hint { position: absolute; left: 12px; top: 8px; font-size: 14px; color: var(--text-leise); pointer-events: none; }
+    .seite-potenzial .sig-wrap.fertig .sig-hint { display: none; }
+    .seite-potenzial .sig-linie { position: absolute; left: 12px; right: 12px; bottom: 34px; border-bottom: 1px solid var(--linie); pointer-events: none; }
+
+    .seite-potenzial .aktionen { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .seite-potenzial .btn { display: inline-flex; align-items: center; font: 600 16px "Source Sans 3", Arial, sans-serif; min-height: 46px; padding: 0 22px; border-radius: 4px; border: 2px solid var(--aktion); background: var(--aktion); color: var(--weiss); cursor: pointer; text-decoration: none; }
+    .seite-potenzial .btn:hover { background: #09585F; border-color: #09585F; }
+    .seite-potenzial .btn.zweit { background: var(--weiss); color: var(--aktion); }
+    .seite-potenzial .btn.zweit:hover { background: #E4F1F2; }
+    .seite-potenzial .btn.klein-btn { min-height: 36px; padding: 0 14px; font-size: 15px; margin-top: 8px; }
+    /* mit .seite-potenzial davor, weil die Startseite ebenfalls ein Element mit id="meldung" hat */
+    .seite-potenzial #meldung { margin-top: 16px; padding: 12px 16px; border-left: 4px solid var(--aktion); background: var(--flaeche); border-radius: 4px; min-height: 48px; }
+    .seite-potenzial #meldung.fehler { border-left-color: #9B1C1C; }
+
+    .seite-potenzial footer { padding: 32px 0; border-top: 0; }
+    .seite-potenzial footer p { color: #E1E8F4; margin: 12px 0 0; font-size: 14px; }
+    .seite-potenzial footer nav ul { margin: 0; gap: 22px; } /* gap: sonst greift bis 860 px die gemeinsame Regel nav ul { gap: 16px } */
+
+    .seite-potenzial .nur-druck { display: none; }
+
+    /* Ehemalige style-Angaben dieser Seite (höhere Gewichtung, damit sie auch die Druckregeln schlagen) */
+    .seite-potenzial h2.kein-abstand-oben { margin-top: 0; }
+    .seite-potenzial #annahme-titel { margin-top: 16px; }
+    .seite-potenzial .anbieter h3 { margin-top: 0; }
+    .seite-potenzial #sig-d { margin: 6px 0 0; }
+
+    @media (max-width: 860px) {
+      .seite-potenzial .doc { padding: 24px 20px; }
+      .seite-potenzial h1 { font-size: 32px; } .seite-potenzial h2 { font-size: 24px; }
+      .seite-potenzial .zwei, .seite-potenzial .zeile { grid-template-columns: 1fr; }
+    }
+    /* Druckansicht (nur diese Seite; Seitenränder über die benannte Druckseite „angebot“, damit andere Seiten nicht betroffen sind) */
+    .seite-potenzial { page: angebot; }
+    @page angebot { margin: 16mm; }
+    @media print {
+      body.seite-potenzial { background: #fff; font-size: 11pt; }
+      .seite-potenzial .demo, .seite-potenzial header.kopf, .seite-potenzial footer, .seite-potenzial .skip, .seite-potenzial .aktionen, .seite-potenzial #meldung, .seite-potenzial .btn, .seite-potenzial .sig-hint, .seite-potenzial .nicht-druck { display: none !important; }
+      .seite-potenzial .nur-druck { display: block; }
+      .seite-potenzial main { padding: 0; } .seite-potenzial .wrap { max-width: none; padding: 0; }
+      .seite-potenzial .doc { border: 0; padding: 0; }
+      .seite-potenzial h2 { page-break-after: avoid; } .seite-potenzial .tab, .seite-potenzial fieldset, .seite-potenzial .anbieter { page-break-inside: avoid; }
+      .seite-potenzial .annahme { page-break-before: always; }
+      .seite-potenzial input, .seite-potenzial textarea, .seite-potenzial select { border: 0; border-bottom: 1px solid #000; border-radius: 0; padding: 2px 0; }
+      .seite-potenzial .sig-wrap { border: 1px solid #000; }
+      .seite-potenzial .zwei { grid-template-columns: 1fr 1.6fr; gap: 16px; }
+      .seite-potenzial .zeile { grid-template-columns: 1fr 1fr; }
+      .seite-potenzial fieldset { border: 1px solid #999; padding: 10px 12px 2px; margin-bottom: 10px; }
+      .seite-potenzial .feld { margin-bottom: 8px; }
+      .seite-potenzial canvas#sig { display: none; }
+      .seite-potenzial #sigimg { display: block; width: 100%; height: 110px; object-fit: contain; object-position: left; }
+      .seite-potenzial #sigimg[src=""], .seite-potenzial #sigimg:not([src]) { visibility: hidden; }
+      .seite-potenzial .sig-wrap { min-height: 110px; }
+      body.seite-potenzial { font-size: 10pt; } .seite-potenzial label, .seite-potenzial .lbl { font-size: 10pt; margin-bottom: 2px; } .seite-potenzial textarea { min-height: 40px; } .seite-potenzial .feld { margin-bottom: 5px; } .seite-potenzial .opt { margin-bottom: 4px; }
+      .seite-potenzial h1 { font-size: 26pt; } .seite-potenzial h2 { font-size: 16pt; margin-top: 18px; }
+    }
+
+    /* ===== 11 · Ehemalige style-Angaben (übrige Seiten) ===== */
+    /* Bildnachweis-Zeile im Fußbereich (5 Seiten); schlägt .klein und footer p */
+    footer .klein { color: #C9D6EA; margin-top: 24px; }
+    /* Kontaktbox der Startseite ohne Abstand oben */
+    .kontakt .kontaktbox { margin-top: 0; }
+
+    /* ===== 11 · Design-Feinschliff (25.11.2026) ===== */
+
+    /* Punkt 8 · Kopf läuft beim Scrollen mit; Sprungziele landen nicht unter dem Kopf */
+    header.kopf { position: sticky; top: 0; z-index: 30; }
+    [id] { scroll-margin-top: 88px; }
+    @media print { header.kopf { position: static; } }
+
+    /* Punkt 2 · Warenkorb im Kopf aller Seiten: Symbol, Wort, Zahl im Kreis */
+    .warenkorb { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; }
+    .korb-icon { flex: none; }
+    .korb-zahl {
+      display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 6px;
+      border-radius: 12px; background: var(--weiss); color: var(--marke); font-size: 14px; font-weight: 700; line-height: 1;
+    }
+    .warenkorb:hover .korb-zahl { background: var(--marke); color: var(--weiss); }
+
+    /* Punkt 1 · Kurze Rückmeldung unten am Bildschirm (leer = unsichtbar) */
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 50;
+      width: max-content; max-width: calc(100% - 32px);
+      background: var(--marke); color: var(--weiss); border-left: 4px solid var(--teal); border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(18, 40, 76, .25); font-weight: 600;
+    }
+    .toast:not(:empty) { padding: 14px 18px; }
+    .toast:empty { box-shadow: none; border: 0; }
+
+    /* Punkt 4 · Preise groß, Hinweise klein */
+    .preis { font-size: 24px; font-weight: 700; color: var(--marke); line-height: 1.15; }
+    .preis .proz { font-size: 16px; font-weight: 600; }
+
+    /* Punkt 5 · Bundles als eigener Abschnitt mit Abstand und sichtbarer Ersparnis */
+    .bundles-kopf { margin-top: 72px; }
+    .bundles-titel { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .bundles-titel::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 14px; }
+    .ersparnis {
+      align-self: flex-start; background: var(--aktion); color: var(--weiss);
+      font-size: 14px; font-weight: 700; padding: 3px 10px; border-radius: var(--radius); margin: 0 0 8px;
+    }
+
+    /* Punkt 6 · Einleitung, Bundle-Kopf und Links im Produktbereich auf derselben linken Kante wie alle Bereiche */
+    @media (min-width: 1101px) {
+      .produkte .intro, .produkte .bundles-kopf, .produkte .weiter { max-width: 1052px; margin-left: auto; margin-right: auto; }
+    }
+
+    /* Punkt 9 · Leistungsumfang: Hinweis auf die Bundles */
+    .hinweis-bundles { margin-top: 24px; padding: 12px 16px; background: var(--weiss); border-left: 4px solid var(--aktion); border-radius: var(--radius); }
+
+    /* Punkt 10 · Team: Initialen statt Platzhalterfoto */
+    .portrait.initialen {
+      aspect-ratio: 1; width: min(100%, 112px); border-radius: 50%;
+      background: var(--marke); color: var(--weiss); font-size: 32px; font-weight: 700; letter-spacing: .02em;
+    }
+
+    /* Punkt 13 · Offenes Handy-Menü als Liste mit Trennlinien und großen Tippflächen */
+    @media (max-width: 860px) {
+      .kopf.menue-js nav li + li { border-top: 1px solid var(--dunkel-linie); }
+      .kopf.menue-js nav a { display: flex; width: 100%; min-height: 48px; border-bottom: 0; }
+      .kopf.menue-js nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
+    }
+
+    /* Punkt 3 · Handy: Demo-Leiste kurz, Kopf in einer Zeile (Logo, Warenkorb-Symbol, Menü) */
+    .demo-kurz { display: none; }
+    @media (max-width: 560px) {
+      .demo-lang { display: none; }
+      .demo-kurz { display: inline; }
+      .kopf .wrap { padding-left: 16px; padding-right: 16px; gap: 8px; padding-top: 12px; padding-bottom: 12px; }
+      .kopf .logo { font-size: 20px; gap: 8px; }
+      .kopf .logo svg { width: 28px; height: 28px; }
+      .korb-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .warenkorb { padding: 6px 10px; gap: 6px; }
+      .menue-btn { padding: 6px 12px; }
+    }
+    /* Sehr schmale Handys (bis 360 px): etwas enger, damit alles in eine Zeile passt */
+    @media (max-width: 360px) {
+      .kopf .logo { font-size: 19px; gap: 6px; }
+      .warenkorb { padding: 6px 8px; }
+      .menue-btn { padding: 6px 10px; }
+    }
+
+    /* Punkt 11 · Handy: Bilder flacher, Seite kürzer */
+    @media (max-width: 560px) {
+      .karte .bild { aspect-ratio: 2 / 1; }
+      .start img { aspect-ratio: 16 / 9; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+
+    /* ===== 12 · Produktseiten (produkte/*.html, body.seite-produkt) und Links darauf (26.11.2026) ===== */
+    /* Kopf des Produkts: Bild links, Angaben und Warenkorb rechts; bis 860 px untereinander */
+    .seite-produkt .produkt { background: var(--weiss); border-bottom: 1px solid var(--linie); }
+    .seite-produkt .produkt-kopf { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+    .seite-produkt .produkt-kopf .bild { margin: 0; border: 1px solid var(--linie); }
+    .seite-produkt .laufzeit { margin-bottom: 20px; }
+    .seite-produkt .laufzeit strong { color: var(--marke); }
+    .seite-produkt .preis { margin: 0; }
+    .seite-produkt .preis-hinweis { margin-bottom: 20px; }
+    /* Drei Abschnitte Enthalten, Sie erhalten, Ihre Mitwirkung: h2 mit kurzem Balken */
+    .seite-produkt .produkt-umfang { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--linie); }
+    .seite-produkt .produkt-umfang h2 { font-size: 24px; margin-bottom: 12px; }
+    .seite-produkt .produkt-umfang h2::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 12px; }
+    .seite-produkt .produkt-umfang ul { margin: 0; padding-left: 20px; }
+    .seite-produkt .produkt-umfang li { margin-bottom: 6px; }
+    .seite-produkt .weiter .btn-zweit { margin-left: 0; }
+    @media (max-width: 860px) {
+      .seite-produkt .produkt-kopf, .seite-produkt .produkt-umfang { grid-template-columns: 1fr; gap: 24px; }
+      .seite-produkt .produkt-umfang { margin-top: 40px; padding-top: 32px; }
+      .seite-produkt .produkt-kopf .bild { aspect-ratio: 2 / 1; }
+      .seite-produkt .weiter .btn-zweit { margin-top: 0; }
+    }
+
+    /* Startseite: Produktname als Link (bleibt Überschrift in Nachtblau, Unterstreichung zeigt den Link) */
+    .karte h3 a { color: var(--marke); text-decoration: underline; text-decoration-thickness: 1px; }
+    .karte h3 a:hover, .karte h3 a:focus-visible { color: var(--aktion); text-decoration-thickness: 2px; }
+    .karte .bild-link { display: block; }
+
+    /* Leistungsumfang: Kurzübersicht je Paket mit Link zur Produktseite */
+    .paket-uebersicht { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .paket-uebersicht li { background: var(--flaeche); border: 1px solid var(--linie); border-top: 4px solid var(--marke); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; }
+    .paket-uebersicht h2 { font-size: 20px; margin: 0 0 8px; }
+    .service .paket-uebersicht h2::before { content: none; } /* der 4-px-Balken der Karte ersetzt hier den Balken über der h2 */
+    .paket-uebersicht .laufzeit { margin: 0 0 4px; color: var(--text-leise); flex-grow: 1; }
+    .paket-uebersicht .preis { margin: 0; }
+    .paket-uebersicht .preis-hinweis { margin: 0 0 12px; }
+    .paket-uebersicht a { font-weight: 600; align-self: flex-start; padding: 2px 0; }
+    @media (max-width: 900px) { .paket-uebersicht { grid-template-columns: 1fr; } }
+
+    /* ===== 13 · Warenkorb: Link im Kopf und Seite warenkorb.html (body.seite-warenkorb) (26.11.2026) ===== */
+    /* Kopf: Link sieht aus wie der frühere Knopf; auf der Warenkorb-Seite hell hinterlegt (aktuelle Seite) */
+    a.warenkorb { text-decoration: none; }
+    a.warenkorb[aria-current="page"] { background: var(--weiss); color: var(--marke); }
+    a.warenkorb[aria-current="page"] .korb-zahl { background: var(--marke); color: var(--weiss); }
+
+    .seite-warenkorb .korb-bereich { background: var(--weiss); border-bottom: 1px solid var(--linie); }
+    .seite-warenkorb #korb h2 { font-size: 28px; margin-bottom: 16px; }
+    .seite-warenkorb #korb h2::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 14px; }
+
+    /* Artikelzeilen: Name | Menge | Summe | Entfernen; bis 560 px gestapelt */
+    .korb-liste { list-style: none; margin: 0 0 32px; padding: 0; border-top: 4px solid var(--marke); }
+    .korb-zeile { display: grid; grid-template-columns: minmax(0, 1fr) auto 9em auto; gap: 12px 24px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--linie); }
+    .korb-name a { font-size: 18px; font-weight: 600; }
+    .korb-einzel { display: block; margin-top: 2px; color: var(--text-leise); }
+    .korb-menge { display: flex; align-items: center; gap: 8px; }
+    .menge-btn {
+      width: 40px; height: 40px; padding: 0; cursor: pointer;
+      background: var(--weiss); color: var(--aktion); border: 2px solid var(--aktion); border-radius: var(--radius);
+      font: inherit; font-size: 22px; font-weight: 700; line-height: 1;
+    }
+    .menge-btn:hover { background: #E4F1F2; }
+    .menge-btn:disabled { background: var(--flaeche); color: var(--text-leise); border-color: var(--linie); cursor: not-allowed; }
+    .menge-wert { min-width: 5.5em; text-align: center; font-weight: 600; }
+    .korb-summe { margin: 0; text-align: right; font-size: 18px; font-weight: 700; color: var(--marke); }
+    .korb-entfernen {
+      background: none; border: 0; padding: 8px 4px; min-height: 40px; cursor: pointer;
+      color: var(--aktion); font: inherit; text-decoration: underline; text-underline-offset: 3px;
+    }
+    .korb-entfernen:hover { text-decoration-thickness: 2px; }
+
+    /* Summen und Absenden: rechts, schmal */
+    .korb-abschluss { max-width: 420px; margin-left: auto; }
+    .korb-summen { margin: 0 0 12px; }
+    .korb-summen div { display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; }
+    .korb-summen dt, .korb-summen dd { margin: 0; }
+    .korb-summen dd { text-align: right; white-space: nowrap; }
+    .korb-summen .gesamt { border-top: 2px solid var(--marke); margin-top: 6px; padding-top: 12px; align-items: baseline; }
+    .korb-summen .gesamt dt { font-weight: 700; color: var(--marke); }
+    .korb-summen .gesamt dd { font-size: 24px; font-weight: 700; color: var(--marke); }
+    .korb-hinweis { color: var(--text-leise); }
+    .korb-abschluss .btn { width: 100%; text-align: center; }
+
+    @media (max-width: 560px) {
+      .korb-zeile { grid-template-columns: minmax(0, 1fr) auto; }
+      .korb-name, .korb-entfernen { grid-column: 1 / -1; }
+      .korb-entfernen { justify-self: start; }
+      .menge-wert { min-width: 4.5em; }
+      .korb-abschluss { max-width: none; }
+    }

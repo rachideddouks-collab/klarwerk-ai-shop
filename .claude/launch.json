@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "klarwerk-vorschau",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/vorschau-server.js"],
+      "port": 8000,
+      "url": "http://127.0.0.1:8000"
+    }
+  ]
+}
