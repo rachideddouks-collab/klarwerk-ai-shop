@@ -43,16 +43,18 @@
      Produktliste: einzige Stelle mit Preisen (netto, in Cent). Links gelten ab dem Ordner website/.
      min: kleinste Menge. monate: Menge bedeutet Monate (Head of AI, Mindestlaufzeit 3 Monate). */
   var PRODUKTE = {
-    "strategie":       { name: "Conversational AI & Digital Analytics Strategy", preis: 520000,  link: "produkte/strategie.html",       min: 1 },
-    "governance":      { name: "Data Governance, Compliance & AI",               preis: 590000,  link: "produkte/governance.html",      min: 1 },
-    "automatisierung": { name: "AI Automation & LowCode Integration",            preis: 890000,  link: "produkte/automatisierung.html", min: 1 },
-    "agenten-bi":      { name: "AI Agents & Generative Business Intelligence",   preis: 1190000, link: "produkte/agenten-bi.html",      min: 1 },
-    "head-of-ai":      { name: "Strategic AI Business Management (Head of AI)",  preis: 690000,  link: "produkte/head-of-ai.html",      min: 3, monate: true },
-    "startpaket":      { name: "Startpaket: Strategie + Governance",             preis: 1060000, link: "index.html#bundles-titel",      min: 1 },
-    "umsetzungspaket": { name: "Umsetzungspaket: Automatisierung + Agenten & BI", preis: 1980000, link: "index.html#bundles-titel",     min: 1 },
-    "komplettpaket":   { name: "Komplettpaket: Strategie, Governance, Automatisierung, Agenten & BI", preis: 3000000, link: "index.html#bundles-titel", min: 1 }
+    "strategie":       { kurz: "Strategie", name: "Conversational AI & Digital Analytics Strategy", preis: 520000,  link: "produkte/strategie.html",       min: 1 },
+    "governance":      { kurz: "Governance", name: "Data Governance, Compliance & AI",               preis: 590000,  link: "produkte/governance.html",      min: 1 },
+    "automatisierung": { kurz: "Automatisierung", name: "AI Automation & LowCode Integration",            preis: 890000,  link: "produkte/automatisierung.html", min: 1 },
+    "agenten-bi":      { kurz: "Agenten & BI", name: "AI Agents & Generative Business Intelligence",   preis: 1190000, link: "produkte/agenten-bi.html",      min: 1 },
+    "head-of-ai":      { kurz: "Head of AI", name: "Strategic AI Business Management (Head of AI)",  preis: 690000,  link: "produkte/head-of-ai.html",      min: 3, monate: true },
+    "startpaket":      { kurz: "Startpaket", name: "Startpaket: Strategie + Governance",             preis: 1060000, link: "index.html#bundles-titel",      min: 1 },
+    "umsetzungspaket": { kurz: "Umsetzungspaket", name: "Umsetzungspaket: Automatisierung + Agenten & BI", preis: 1980000, link: "index.html#bundles-titel",     min: 1 },
+    "komplettpaket":   { kurz: "Komplettpaket", name: "Komplettpaket: Strategie, Governance, Automatisierung, Agenten & BI", preis: 3000000, link: "index.html#bundles-titel", min: 1 }
   };
-  var MAX_MENGE = 99;
+  var MAX_MONATE = 99;
+  // Pakete und Bundles liegen genau einmal im Warenkorb; nur beim Head of AI ist die Menge (Monate) wählbar
+  var maxMenge = function (id) { return PRODUKTE[id].monate ? MAX_MONATE : 1; };
   var SCHLUESSEL = "klarwerk-warenkorb";
   var MWST_PROZENT = 19;
   var euro = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" });
@@ -71,7 +73,8 @@
       daten.forEach(function (a) {
         if (!a || typeof a.id !== "string" || !istProdukt(a.id) || gesehen[a.id]) return;
         var m = a.menge;
-        if (typeof m !== "number" || Math.floor(m) !== m || m < PRODUKTE[a.id].min || m > MAX_MENGE) return;
+        if (typeof m !== "number" || Math.floor(m) !== m || m < PRODUKTE[a.id].min) return;
+        m = Math.min(m, maxMenge(a.id)); // ältere Warenkörbe mit Menge > 1 begrenzen
         gesehen[a.id] = true;
         korb.push({ id: a.id, menge: m });
       });
@@ -97,35 +100,81 @@
   zeigeZahl(liesKorb());
 
   /* Meldungsfläche: wird beim Laden angelegt (leer), damit Screenreader spätere Meldungen ansagen.
-     Rückmeldungen erscheinen als kurze Einblendung unten am Bildschirm. */
+     Kurze Einblendung mit Link zum Warenkorb; sie bleibt stehen, solange Maus oder Fokus darauf liegen. */
   var toast = document.createElement("div");
   toast.className = "toast";
   toast.setAttribute("role", "status");
   toast.setAttribute("aria-live", "polite");
   document.body.appendChild(toast);
   var timer;
-  var melde = function (text) {
-    toast.textContent = text;
+  var starteTimer = function () {
     window.clearTimeout(timer);
     timer = window.setTimeout(function () { toast.textContent = ""; }, 5000);
   };
+  var melde = function (text, mitLink) {
+    toast.textContent = "";
+    var s = document.createElement("span");
+    s.textContent = text;
+    toast.appendChild(s);
+    if (mitLink && korbLink) {
+      var a = document.createElement("a");
+      a.href = korbLink.getAttribute("href");
+      a.textContent = "Zum Warenkorb";
+      toast.appendChild(a);
+    }
+    starteTimer();
+  };
+  ["mouseenter", "focusin"].forEach(function (t) { toast.addEventListener(t, function () { window.clearTimeout(timer); }); });
+  ["mouseleave", "focusout"].forEach(function (t) { toast.addEventListener(t, starteTimer); });
 
-  // „In den Warenkorb“: erstes Hinzufügen mit Mindestmenge (Head of AI: 3 Monate), danach je Klick +1
+  // „In den Warenkorb“: Paket einmal hinzufügen (Head of AI mit 3 Monaten), Button bestätigt kurz
   document.querySelectorAll("button[data-id]").forEach(function (b) {
     var id = b.getAttribute("data-id");
     if (!istProdukt(id)) return;
+    var beschriftung = b.textContent;
+    var zurueck;
     b.addEventListener("click", function () {
       var p = PRODUKTE[id];
       var korb = liesKorb();
-      var artikel = korb.filter(function (a) { return a.id === id; })[0];
-      if (artikel) artikel.menge = Math.min(artikel.menge + 1, MAX_MENGE);
-      else korb.push({ id: id, menge: p.min });
+      var schonDa = korb.some(function (a) { return a.id === id; });
+      if (!schonDa) korb.push({ id: id, menge: p.min });
       speichereKorb(korb);
       zeigeZahl(korb);
-      var menge = artikel ? artikel.menge : p.min;
-      melde("Demo: „" + p.name + "“ liegt im Warenkorb" + (p.monate ? " (" + menge + " Monate)" : "") + ". Es wird nichts bestellt und nichts bezahlt.");
+      b.textContent = schonDa ? "✓ Im Warenkorb" : "✓ Hinzugefügt";
+      window.clearTimeout(zurueck);
+      zurueck = window.setTimeout(function () { b.textContent = beschriftung; }, 2000);
+      melde(p.kurz + (schonDa ? " ist schon im Warenkorb." : " hinzugefügt" + (p.monate ? " (" + p.min + " Monate)" : "") + ". Demo, keine Bestellung."), true);
     });
   });
+
+  /* Aufklappbare Details: am Handy zugeklappt, darüber offen (ohne JavaScript bleiben die Karten offen) */
+  var handy = window.matchMedia("(max-width: 560px)");
+  var klappe = function () {
+    document.querySelectorAll("details.mehr").forEach(function (d) { d.open = !handy.matches; });
+  };
+  klappe();
+  if (handy.addEventListener) handy.addEventListener("change", klappe);
+  window.addEventListener("beforeprint", function () { document.querySelectorAll("details.mehr").forEach(function (d) { d.open = true; }); });
+
+  /* Startseite: aktuellen Bereich im Menü markieren */
+  if (nav && document.getElementById("top")) {
+    var ziele = [["orientierung", 'a[href="#orientierung"]'], ["produkte", 'a[href="#produkte"]'], ["service", 'a[href="service/index.html"]'], ["ueber-uns", 'a[href="#ueber-uns"]'], ["kontakt", 'a[href="#kontakt"]']]
+      .map(function (z) { return { bereich: document.getElementById(z[0]), link: nav.querySelector(z[1]) }; })
+      .filter(function (z) { return z.bereich && z.link; });
+    var markiere = function () {
+      var aktiv = null;
+      var grenze = (kopf ? kopf.offsetHeight : 0) + 120;
+      ziele.forEach(function (z) { if (z.bereich.getBoundingClientRect().top <= grenze) aktiv = z; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) aktiv = ziele[ziele.length - 1];
+      ziele.forEach(function (z) {
+        if (z === aktiv) z.link.setAttribute("aria-current", "true");
+        else z.link.removeAttribute("aria-current");
+      });
+    };
+    window.addEventListener("scroll", markiere, { passive: true });
+    window.addEventListener("resize", markiere);
+    markiere();
+  }
 
   /* 3 · Warenkorb-Seite (warenkorb.html)
      Baut die Liste aus dem Speicher; − und + ändern die Menge, „Entfernen“ löscht den Artikel.
@@ -163,7 +212,9 @@
         return;
       }
 
-      zeigeUeberschrift("Ihre Auswahl");
+      var layout = el("div", { "class": "korb-layout" });
+      var haupt = el("div", { "class": "korb-haupt" });
+      haupt.appendChild(el("h2", { id: "korb-titel", tabindex: "-1" }, "Ihre Auswahl"));
       var liste = el("ul", { "class": "korb-liste" });
       var netto = 0;
 
@@ -176,19 +227,20 @@
 
         var name = el("div", { "class": "korb-name" });
         name.appendChild(el("a", { href: p.link }, p.name));
-        name.appendChild(el("span", { "class": "korb-einzel" }, mengeText(p, a.menge) + " × " + formatiere(p.preis)));
+        name.appendChild(el("span", { "class": "korb-einzel" }, p.monate ? mengeText(p, a.menge) + " × " + formatiere(p.preis) : "Festpreis"));
         li.appendChild(name);
 
-        var wort = p.monate ? "Monate" : "Menge";
-        var menge = el("div", { "class": "korb-menge", role: "group", "aria-label": wort + ": " + p.name });
-        var minus = el("button", { type: "button", "class": "menge-btn", "data-aktion": "minus", "data-id": a.id, "aria-label": wort + " verringern: " + p.name }, "−");
-        var plus = el("button", { type: "button", "class": "menge-btn", "data-aktion": "plus", "data-id": a.id, "aria-label": wort + " erhöhen: " + p.name }, "+");
-        minus.disabled = a.menge <= p.min;
-        plus.disabled = a.menge >= MAX_MENGE;
-        menge.appendChild(minus);
-        menge.appendChild(el("span", { "class": "menge-wert" }, mengeText(p, a.menge)));
-        menge.appendChild(plus);
-        li.appendChild(menge);
+        if (p.monate) {
+          var menge = el("div", { "class": "korb-menge", role: "group", "aria-label": "Monate: " + p.name });
+          var minus = el("button", { type: "button", "class": "menge-btn", "data-aktion": "minus", "data-id": a.id, "aria-label": "Monate verringern: " + p.name }, "−");
+          var plus = el("button", { type: "button", "class": "menge-btn", "data-aktion": "plus", "data-id": a.id, "aria-label": "Monate erhöhen: " + p.name }, "+");
+          minus.disabled = a.menge <= p.min;
+          plus.disabled = a.menge >= maxMenge(a.id);
+          menge.appendChild(minus);
+          menge.appendChild(el("span", { "class": "menge-wert" }, mengeText(p, a.menge)));
+          menge.appendChild(plus);
+          li.appendChild(menge);
+        }
 
         var summe = el("p", { "class": "korb-summe" });
         summe.appendChild(el("span", { "class": "sr-nur" }, "Summe: "));
@@ -199,10 +251,15 @@
 
         liste.appendChild(li);
       });
-      bereich.appendChild(liste);
+      haupt.appendChild(liste);
+      var weiter = el("p");
+      weiter.appendChild(el("a", { "class": "korb-weiter", href: "index.html#produkte" }, "← Weiter ansehen"));
+      haupt.appendChild(weiter);
+      layout.appendChild(haupt);
 
       var mwst = Math.round(netto * MWST_PROZENT / 100);
       var abschluss = el("div", { "class": "korb-abschluss" });
+      abschluss.appendChild(el("h2", { "class": "korb-box-titel" }, "Zusammenfassung"));
       var summen = el("dl", { "class": "korb-summen" });
       [["Zwischensumme netto", netto, ""], ["zzgl. " + MWST_PROZENT + " % MwSt.", mwst, ""], ["Gesamtbetrag", netto + mwst, "gesamt"]].forEach(function (r) {
         var zeile = el("div", r[2] ? { "class": r[2] } : {});
@@ -213,7 +270,8 @@
       abschluss.appendChild(summen);
       abschluss.appendChild(el("p", { "class": "korb-hinweis" }, "Digitale Leistung, kein Versand. Angebot nur für Unternehmen."));
       abschluss.appendChild(el("button", { type: "button", "class": "btn", "data-aktion": "bestellen" }, "Demo-Bestellung absenden"));
-      bereich.appendChild(abschluss);
+      layout.appendChild(abschluss);
+      bereich.appendChild(layout);
 
       // Fokus nach dem Neuaufbau wiederherstellen (gesperrte Schaltfläche: die andere der Gruppe)
       if (fokus) {
@@ -258,11 +316,11 @@
       }
 
       if (aktion === "minus") artikel.menge = Math.max(artikel.menge - 1, p.min);
-      if (aktion === "plus") artikel.menge = Math.min(artikel.menge + 1, MAX_MENGE);
+      if (aktion === "plus") artikel.menge = Math.min(artikel.menge + 1, maxMenge(id));
       speichereKorb(korb);
       zeigeZahl(korb);
       zeigeKorb({ aktion: aktion, id: id });
-      melde((p.monate ? "Monate" : "Menge") + " für „" + p.name + "“: " + artikel.menge + ".");
+      melde("Monate für " + p.kurz + ": " + artikel.menge + ".");
     });
 
     zeigeKorb();

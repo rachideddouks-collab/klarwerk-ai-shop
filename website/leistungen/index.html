@@ -29,7 +29,7 @@
           <li><a href="../index.html#produkte" aria-current="page">Leistungen</a></li>
           <li><a href="../service/index.html">Service</a></li>
           <li><a href="../index.html#ueber-uns">Über uns</a></li>
-          <li><a href="../index.html#kontakt">Kontakt</a></li>
+          <li class="nav-cta"><a href="../index.html#kontakt">Erstgespräch</a></li>
         </ul>
       </nav>
       <a class="warenkorb" href="../warenkorb.html" id="warenkorb-link"><svg class="korb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h2.5l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span class="korb-text">Warenkorb</span> <span class="korb-zahl" id="anzahl">0</span></a>
@@ -46,19 +46,19 @@
     <section class="service">
       <div class="wrap">
         <h2 class="sub">Laufzeit, Ergebnis und Preis</h2>
-        <table class="tabelle">
+        <table class="tabelle karten-tabelle" role="table">
           <caption>Alle Angaben sind erfunden und dienen nur als Übungsbeispiel. Preise zzgl. MwSt. Bundles sparen rund 5 Prozent gegenüber den Einzelpreisen.</caption>
-          <thead><tr><th scope="col">Paket</th><th scope="col">Laufzeit</th><th scope="col">Ergebnis</th><th scope="col">Preis</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">KI-Potenzial-Check (Einstiegsangebot)</th><td>1 Workshop-Halbtag, Bericht nach 5 Werktagen</td><td>5 priorisierte Use Cases, Roadmap für 90 Tage</td><td>1.290 €</td></tr>
-            <tr><th scope="row">Conversational AI &amp; Digital Analytics Strategy</th><td>4 Wochen</td><td>Ist-Aufnahme, Use-Case-Bewertung, Roadmap</td><td>5.200 €</td></tr>
-            <tr><th scope="row">Data Governance, Compliance &amp; AI</th><td>4 Wochen</td><td>Reifegrad-Check, Rollenmodell, Richtlinien (keine Rechtsberatung)</td><td>5.900 €</td></tr>
-            <tr><th scope="row">AI Automation &amp; LowCode Integration</th><td>5 Wochen</td><td>2 automatisierte Prozesse, dokumentiert</td><td>8.900 €</td></tr>
-            <tr><th scope="row">AI Agents &amp; Generative Business Intelligence</th><td>6 Wochen</td><td>Pilot-Agent, Dashboard, Übergabe</td><td>11.900 €</td></tr>
-            <tr><th scope="row">Strategic AI Business Management (Head of AI)</th><td>monatlich, mind. 3 Monate</td><td>KI-Steuerung, Roadmap, Berichte</td><td>6.900 € pro Monat</td></tr>
-            <tr><th scope="row">Bundle Startpaket: Strategie + Governance</th><td>8 Wochen</td><td>Roadmap, Reifegrad-Check, Rollenmodell, Richtlinien</td><td>10.600 € statt 11.100 €</td></tr>
-            <tr><th scope="row">Bundle Umsetzungspaket: Automatisierung + Agenten &amp; BI</th><td>11 Wochen</td><td>2 automatisierte Prozesse, Pilot-Agent, Dashboard</td><td>19.800 € statt 20.800 €</td></tr>
-            <tr><th scope="row">Bundle Komplettpaket: Strategie, Governance, Automatisierung, Agenten &amp; BI</th><td>19 Wochen</td><td>alle vier Pakete nacheinander</td><td>30.000 € statt 31.900 €</td></tr>
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Paket</th><th scope="col" role="columnheader">Laufzeit</th><th scope="col" role="columnheader">Ergebnis</th><th scope="col" role="columnheader">Preis</th></tr></thead>
+          <tbody role="rowgroup">
+            <tr role="row"><th scope="row" role="rowheader">KI-Potenzial-Check (Einstiegsangebot)</th><td role="cell" data-label="Laufzeit">1 Workshop-Halbtag, Bericht nach 5 Werktagen</td><td role="cell" data-label="Ergebnis">5 priorisierte Use Cases, Roadmap für 90 Tage</td><td role="cell" data-label="Preis">1.290 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Conversational AI &amp; Digital Analytics Strategy</th><td role="cell" data-label="Laufzeit">4 Wochen</td><td role="cell" data-label="Ergebnis">Ist-Aufnahme, Use-Case-Bewertung, Roadmap</td><td role="cell" data-label="Preis">5.200 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Data Governance, Compliance &amp; AI</th><td role="cell" data-label="Laufzeit">4 Wochen</td><td role="cell" data-label="Ergebnis">Reifegrad-Check, Rollenmodell, Richtlinien (keine Rechtsberatung)</td><td role="cell" data-label="Preis">5.900 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">AI Automation &amp; LowCode Integration</th><td role="cell" data-label="Laufzeit">5 Wochen</td><td role="cell" data-label="Ergebnis">2 automatisierte Prozesse, dokumentiert</td><td role="cell" data-label="Preis">8.900 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">AI Agents &amp; Generative Business Intelligence</th><td role="cell" data-label="Laufzeit">6 Wochen</td><td role="cell" data-label="Ergebnis">Pilot-Agent, Dashboard, Übergabe</td><td role="cell" data-label="Preis">11.900 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Strategic AI Business Management (Head of AI)</th><td role="cell" data-label="Laufzeit">monatlich, mind. 3 Monate</td><td role="cell" data-label="Ergebnis">KI-Steuerung, Roadmap, Berichte</td><td role="cell" data-label="Preis">6.900 € pro Monat</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Bundle Startpaket: Strategie + Governance</th><td role="cell" data-label="Laufzeit">8 Wochen</td><td role="cell" data-label="Ergebnis">Roadmap, Reifegrad-Check, Rollenmodell, Richtlinien</td><td role="cell" data-label="Preis">10.600 € statt 11.100 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Bundle Umsetzungspaket: Automatisierung + Agenten &amp; BI</th><td role="cell" data-label="Laufzeit">11 Wochen</td><td role="cell" data-label="Ergebnis">2 automatisierte Prozesse, Pilot-Agent, Dashboard</td><td role="cell" data-label="Preis">19.800 € statt 20.800 €</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Bundle Komplettpaket: Strategie, Governance, Automatisierung, Agenten &amp; BI</th><td role="cell" data-label="Laufzeit">19 Wochen</td><td role="cell" data-label="Ergebnis">alle vier Pakete nacheinander</td><td role="cell" data-label="Preis">30.000 € statt 31.900 €</td></tr>
           </tbody>
         </table>
         <p class="weiter"><a class="btn" href="../index.html#produkte">Zu den Paketen im Shop</a><a class="btn btn-zweit" href="paketumfang.html">Leistungsumfang je Paket</a></p>
@@ -70,8 +70,8 @@
       <h2>Klarwerk AI · Demo-Shop</h2>
       <nav aria-label="Rechtliches">
         <ul>
-          <li><a href="../index.html#impressum">Impressum</a></li>
-          <li><a href="../index.html#datenschutz">Datenschutzerklärung</a></li>
+          <li><a href="../impressum.html">Impressum</a></li>
+          <li><a href="../datenschutz.html">Datenschutzerklärung</a></li>
           <li><a href="../index.html#kontakt">Kontakt</a></li>
         </ul>
       </nav>

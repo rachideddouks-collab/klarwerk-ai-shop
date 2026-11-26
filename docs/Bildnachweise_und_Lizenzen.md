@@ -5,6 +5,7 @@
 | website/images/start.svg | selbst erstellt (25.11.2026) | Projekt | frei von Rechten Dritter |
 | website/images/produkt-1..5.svg | selbst erstellt | Projekt | frei von Rechten Dritter |
 | website/images/favicon.svg | selbst erstellt | Projekt | frei von Rechten Dritter |
+| website/images/team-1..4.svg | selbst erstellt (26.11.2026) | Projekt | frei von Rechten Dritter |
 | website/fonts/SourceSans3.ttf | Source Sans 3 | Adobe, Open-Source-Projekt | SIL Open Font License (docs: website/fonts/OFL.txt) |
 
 Alle Bilder der Website sind selbst erstellt. Im Projekt liegen keine fremden Bilder.

@@ -15,7 +15,7 @@ Alternativ lokale Vorschau mit Node.js (ohne Zusatzpakete): `node .claude/vorsch
 | Ordner / Datei | Zweck |
 |---|---|
 | `website/` | die fertige Website (statisch: HTML, CSS, etwas JavaScript, keine Server, keine externen Schriften) |
-| `website/css/klarwerk.css` | die gesamte Gestaltung aller 13 Seiten |
+| `website/css/klarwerk.css` | die gesamte Gestaltung aller 15 Seiten |
 | `website/js/` | `app.js` (Handy-Menü, Produktliste mit Preisen, Warenkorb und Warenkorb-Seite, alle Seiten), `reifegrad-test.js`, `potenzial-check.js` |
 | `.github/workflows/pages.yml` | veröffentlicht `website/` mit GitHub Pages |
 | `docs/` | Konzept, Projektanweisungen, Designsystem, Entscheidungen, Abnahme-Checkliste, Bildnachweise, Ordnerstruktur |
@@ -26,9 +26,10 @@ Alternativ lokale Vorschau mit Node.js (ohne Zusatzpakete): `node .claude/vorsch
 Das frühere Titelbild (Pixabay) liegt nur noch außerhalb des Projekts in `C:\projekte\klarwerk_ai_privat\` und ist nicht Teil des Repositorys.
 
 ## Seiten (website/)
-- `index.html` Startseite: Start, Orientierung, fünf Produktkarten mit Demo-Warenkorb, Bundles, Service-Kurzfassung, Über uns, Kontakt
+- `index.html` Startseite: Start, Orientierung, Beispielergebnis, fünf Produktkarten mit Demo-Warenkorb, Bundles, Service-Kurzfassung, Über uns, Kontakt
 - `produkte/` je Paket eine Seite (strategie, governance, automatisierung, agenten-bi, head-of-ai)
-- `warenkorb.html` Warenkorb mit Mengen, Summen und Demo-Bestellung
+- `warenkorb.html` Warenkorb mit Summen, Monatswahl für Head of AI und Demo-Bestellung
+- `impressum.html`, `datenschutz.html` Platzhalterseiten
 - `orientierung/reifegrad-test.html` KI-Reifegrad-Test (12 Fragen, Ergebnis per E-Mail)
 - `orientierung/potenzial-check.html` Angebot KI-Potenzial-Check (Formular, Unterschrift, PDF-Druck)
 - `leistungen/index.html` Paketübersicht (Tabelle), `leistungen/paketumfang.html` Kurzübersicht mit Links zu den Produktseiten
@@ -44,3 +45,5 @@ Fertig und geprüft (siehe `docs/Abnahme-Checkliste.md`). Offene Punkte: Impress
 25.11.2026: Projektstruktur aufgeräumt. CSS vollständig in `klarwerk.css`, JavaScript in `website/js/`, Handy-Menü (Schaltfläche „Menü“ bis 860 px) auf allen 7 Seiten. Vorschau-Screenshots in `vorschau/` neu erzeugt.
 
 26.11.2026: Produktseiten, Warenkorb mit Summen (localStorage), Veröffentlichung mit GitHub Pages.
+
+26.11.2026: Design-Überarbeitung (Punkte 1 bis 16, einzeln freigegeben, siehe `docs/Entscheidungsprotokoll.md`). Die Screenshots in `vorschau/` zeigen noch den Stand vom 25.11.2026.

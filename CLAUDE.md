@@ -20,26 +20,27 @@ Quellen: `docs/Projektanweisungen_Klarwerk-AI.md`, `docs/Designsystem_Stil-C.md`
 - Anmeldung bei GitHub (`gh auth login`) mache ich selbst; keine Passwörter oder Tokens in Dateien oder Befehle schreiben.
 
 ## Ordnerstruktur (`website/`)
-- `index.html`; `warenkorb.html`; `orientierung/` (reifegrad-test.html, potenzial-check.html); `leistungen/` (index.html, paketumfang.html: Kurzübersicht mit Links); `produkte/` (strategie.html, governance.html, automatisierung.html, agenten-bi.html, head-of-ai.html); `service/` (index.html, faq.html).
-- Produktseiten: Inhalte (Enthalten, Sie erhalten, Ihre Mitwirkung) stehen nur dort, fest im HTML, `body.seite-produkt`. Warenkorb-Schaltflächen tragen `data-id` (strategie, governance, automatisierung, agenten-bi, head-of-ai, startpaket, umsetzungspaket, komplettpaket); Namen und Preise der Artikel stehen nur in der Produktliste in `js/app.js` (Preise in Cent).
+- `index.html`; `warenkorb.html`; `impressum.html`, `datenschutz.html` (Platzhalter, `body.seite-recht`); `orientierung/` (reifegrad-test.html, potenzial-check.html); `leistungen/` (index.html, paketumfang.html: Kurzübersicht mit Links); `produkte/` (strategie.html, governance.html, automatisierung.html, agenten-bi.html, head-of-ai.html); `service/` (index.html, faq.html).
+- Produktseiten: Inhalte (Enthalten, Sie erhalten, Ihre Mitwirkung) stehen nur dort, fest im HTML, `body.seite-produkt`. Laufzeit, Preis und Knöpfe („In den Warenkorb“, „Frage zum Paket?“ als mailto an `kontakt@klarwerk-ai.example`) im Kaufkasten. Warenkorb-Schaltflächen tragen `data-id` (strategie, governance, automatisierung, agenten-bi, head-of-ai, startpaket, umsetzungspaket, komplettpaket); Namen und Preise der Artikel stehen nur in der Produktliste in `js/app.js` (Preise in Cent).
 - `css/klarwerk.css`: die gesamte Gestaltung. Keine `<style>`-Blöcke und keine `style="…"` in den Seiten. Seitenspezifisches CSS steht als beschrifteter Abschnitt mit Körperklasse davor (`.seite-reifegrad`, `.seite-potenzial`).
 - `js/app.js` (auf allen Seiten: Handy-Menü, Produktliste mit Preisen, Warenkorb-Speicher und Zähler, Warenkorb-Seite), `js/reifegrad-test.js`, `js/potenzial-check.js`. Einbindung im `<head>` mit `defer`, kein JavaScript in den Seiten. Jeder Code-Teil läuft nur, wenn sein Element existiert.
 - `fonts/` (Source Sans 3, lokal) und `images/`.
 - Jede Information gehört in genau einen Bereich.
 
 ## Gestaltung (Stil C „kontrastreich und kompakt“, freigegeben)
-- Farben: Nachtblau #12284C (Logo, Kopf, Überschriften, dunkle Flächen), Petrolgrün #0B6B73 (nur Buttons und Links auf hellem Grund), Hellgrau #F4F6F8 (Hintergrund), Text #1A1A1A, Text leise #4A5568, Linie #D5DBE3, Demo-Leiste #FFD966 auf #1A1A1A, Teal #6FC2C9 (große Ziffern auf dunklem Grund), Hell auf dunkel #E1E8F4, Linie dunkel #2B4670.
+- Farben: Nachtblau #12284C (Logo, Kopf, Überschriften, dunkle Flächen), Petrolgrün #0B6B73 (nur Buttons und Links auf hellem Grund), Hellgrau #F4F6F8 (Hintergrund), Text #1A1A1A, Text leise #4A5568, Linie #D5DBE3, Demo-Leiste #FFD966 auf #1A1A1A, Teal #6FC2C9 (große Ziffern auf dunklem Grund), Hell auf dunkel #E1E8F4, Linie dunkel #2B4670, Hellblau #E4ECF7 (Kontaktbox).
+- Knopfregel: gefüllt ist nur die wichtigste Aktion (Petrolgrün, auf dunklem Grund weiß); alle weiteren Aktionen nur mit Rahmen.
 - Auf dunklen Flächen sind die Hauptbuttons weiß mit nachtblauer Schrift.
-- Eine Schrift: Source Sans 3, lokal aus `website/fonts`. Fließtext 16 px, Zeilenabstand mindestens 1,5, linksbündig, etwa 80 Zeichen pro Zeile. Startüberschrift 56 px (Handy 36 px). Mindestschrift 14 px.
+- Eine Schrift: Source Sans 3, lokal aus `website/fonts`. Fließtext 16 px, Zeilenabstand mindestens 1,5, linksbündig, etwa 80 Zeichen pro Zeile. Nur sechs Schriftgrößen: 14, 16, 20, 28, 40, 56 px. Startüberschrift 56 px (bis 860 px: 40 px). Mindestschrift 14 px.
 - Ecken 4 px, eckige Buttons, Karten mit 4-px-Balken oben, kurzer Balken über jeder h2.
-- Inhaltsbreite 1100 px (Produktbereich 1360 px). Umbrüche bei 1100, 860 und 560 px. Produktkarten ab 1101 px fünf in einer Reihe, darunter 2 bzw. 1 Spalte.
-- Kopf: bis 860 px Schaltfläche „Menü“ (oben rechts, neben dem Warenkorb), darüber Navigation wie gewohnt.
-- Kopf läuft beim Scrollen mit (sticky). Warenkorb als Link zu `warenkorb.html` (Symbol, Wort, Zahl im Kreis) auf allen 13 Seiten. Gespeichert wird in localStorage („klarwerk-warenkorb“, nur Kennung und Menge) und erst beim Klick auf „In den Warenkorb“. Zähler = Summe der Mengen, Head of AI zählt als 1 Artikel; bleibt nach Seitenwechsel und Neuladen. Gesperrter oder kaputter Speicher: Warenkorb leer, keine Fehlermeldung. Bis 560 px: Kopf in einer Zeile, Warenkorb nur als Symbol mit Zahl, Demo-Leiste in Kurzfassung.
-- Rückmeldungen des Warenkorbs als kurze Einblendung unten (role="status"), kein Meldungskasten im Inhalt.
-- Preise 24 px fett in Nachtblau; Bundles mit Etikett „Sie sparen … €“ (weiß auf Petrolgrün).
-- Team im Bereich „Über uns“ als Kreise mit Initialen (keine Fotos).
+- Inhaltsbreite 1100 px. Umbrüche bei 1100, 860 und 560 px. Produktkarten (Nutzenzeile, Häkchenliste, Laufzeit, Preis) ab 1001 px drei plus zwei, 861 bis 1000 px zwei Spalten (fünfte Karte über die volle Breite), bis 860 px eine Spalte; bis 560 px kompakt mit kleinem Bild und zugeklappten Leistungen. Tabellen bis 700 px als Karten.
+- Kopf: bis 860 px Schaltfläche „Menü“ (oben rechts, neben dem Warenkorb), darüber Navigation wie gewohnt. Letzter Menüpunkt ist der Knopf „Erstgespräch“; auf der Startseite markiert das Menü den aktuellen Abschnitt.
+- Kopf läuft beim Scrollen mit (sticky). Warenkorb als Link zu `warenkorb.html` (Symbol, Wort, Zahl im Kreis) auf allen 15 Seiten. Gespeichert wird in localStorage („klarwerk-warenkorb“, nur Kennung und Menge) und erst beim Klick auf „In den Warenkorb“. Jedes Paket und Bundle liegt höchstens einmal im Warenkorb; Zähler = Anzahl der Artikel (Head of AI zählt als 1); bleibt nach Seitenwechsel und Neuladen. Gesperrter oder kaputter Speicher: Warenkorb leer, keine Fehlermeldung. Bis 560 px: Kopf in einer Zeile, Warenkorb nur als Symbol mit Zahl, Demo-Leiste in Kurzfassung.
+- Rückmeldungen des Warenkorbs als kurze Einblendung (role="status") mit Link „Zum Warenkorb“, ab 861 px oben rechts, darunter unten; der Knopf zeigt kurz „✓ Hinzugefügt“. Kein Meldungskasten im Inhalt.
+- Preise 28 px fett in Nachtblau; Bundles mit Häkchenliste und Etikett „Sie sparen … €“ (weiß auf Petrolgrün), Startpaket als „Empfohlen zum Einstieg“.
+- Team im Bereich „Über uns“ als gezeichnete Avatare `images/team-1..4.svg` (keine Fotos, leerer Alt-Text, Name steht darunter).
 - Titelbild: eigene Grafik `images/start.svg` im Stil der Produktbilder; alle Bilder selbst erstellt.
-- Startseite als Kundenreise: Kopf, Start (Nutzenversprechen und Button), Orientierung, fünf Produktkarten, Bundles, Service (Kurzfassung), Über uns, Kontakt, Fußbereich.
+- Startseite als Kundenreise: Kopf, Start (Nutzenversprechen, Hauptknopf zum Reifegrad-Test), Orientierung, Beispielergebnis (erfundener Musterbericht), fünf Produktkarten, Bundles, Service (Kurzfassung), Über uns, Kontakt (helle Kontaktbox), Fußbereich.
 
 ## Pflichten
 - Nichts von fremden Servern laden: keine Schriften, Skripte, Bilder oder externen Links.
@@ -47,8 +48,8 @@ Quellen: `docs/Projektanweisungen_Klarwerk-AI.md`, `docs/Designsystem_Stil-C.md`
 - Bei 320 px Breite nichts seitlich scrollen. Tippflächen mindestens 24 × 24 px (Menü-Schaltfläche 44 × 44 px).
 - Oben auf jeder Seite der Hinweis „Demo-Shop: keine echten Bestellungen“ (B2B, Preise netto).
 - Preise netto, großer Preis mit kleinem Hinweis „zzgl. MwSt.“, sonst nichts Kleingedrucktes am Preis.
-- Keine Bezahlfunktion: „In den Warenkorb“ zeigt nur eine Bestätigung. Die Warenkorb-Seite zeigt Artikel, Mengen (Head of AI in Monaten, mindestens 3), Zwischensumme netto, 19 % MwSt. (in Cent, kaufmännisch gerundet) und Gesamtbetrag; „Demo-Bestellung absenden“ leert nur den Warenkorb, es wird nichts bestellt oder bezahlt.
-- Impressum und Datenschutzerklärung bleiben Platzhalter.
+- Keine Bezahlfunktion: „In den Warenkorb“ zeigt nur eine Bestätigung. Die Warenkorb-Seite zeigt die Artikel (Festpreis; nur bei Head of AI Monate mit −/+, mindestens 3) und rechts den Kasten „Zusammenfassung“ mit Zwischensumme netto, 19 % MwSt. (in Cent, kaufmännisch gerundet) und Gesamtbetrag; „Demo-Bestellung absenden“ leert nur den Warenkorb, es wird nichts bestellt oder bezahlt.
+- Impressum und Datenschutzerklärung bleiben Platzhalter (eigene Seiten, im Fußbereich jeder Seite verlinkt).
 - Bilder nur lizenzfrei, Bildnachweis im Fußbereich jeder Seite und in `docs/Bildnachweise_und_Lizenzen.md`.
 - Shop-Texte kurz, sachlich, freundlich; Kunden mit „Sie“ ansprechen.
 

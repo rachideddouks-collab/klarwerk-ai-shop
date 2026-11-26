@@ -33,8 +33,8 @@
 
     h1, h2, h3 { color: var(--marke); line-height: 1.2; margin: 0 0 .5em; }
     h1 { font-size: 40px; font-weight: 700; }
-    h2 { font-size: 32px; font-weight: 700; }
-    h3 { font-size: 24px; font-weight: 600; }
+    h2 { font-size: 28px; font-weight: 700; }
+    h3 { font-size: 20px; font-weight: 600; }
     p  { margin: 0 0 1em; max-width: 70ch; }
     .klein { font-size: 14px; color: var(--text-leise); }
 
@@ -66,7 +66,7 @@
     }
     .logo {
       display: flex; align-items: center; gap: 10px;
-      color: var(--weiss); text-decoration: none; font-size: 24px; font-weight: 700;
+      color: var(--weiss); text-decoration: none; font-size: 20px; font-weight: 700;
     }
     .logo span { font-weight: 400; opacity: .9; }
     nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
@@ -86,8 +86,8 @@
       display: inline-block; background: #E4ECF7; color: var(--marke);
       font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
     }
-    .start h1 { font-size: 48px; }
-    .start p.lead { font-size: 18px; }
+    .start h1 { font-size: 56px; }
+    .start p.lead { font-size: 16px; }
     .btn {
       display: inline-block; background: var(--aktion); color: var(--weiss);
       font: inherit; font-weight: 600; text-decoration: none;
@@ -132,12 +132,12 @@
 
     /* 4 · Service */
     .service { background: var(--weiss); border-top: 1px solid var(--linie); border-bottom: 1px solid var(--linie); }
-    .service h3.detail { font-size: 24px; margin: 0 0 8px; }
+    .service h3.detail { font-size: 20px; margin: 0 0 8px; }
     .service h4 { font-size: 20px; font-weight: 600; color: var(--marke); line-height: 1.2; margin: 40px 0 12px; }
 
     .versprechen, .optionen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .versprechen li, .optionen li { background: var(--flaeche); border: 1px solid var(--linie); border-top: 4px solid var(--akzent-petrol, #0B6B73); border-radius: var(--radius); padding: 16px; }
-    .versprechen strong, .optionen strong { display: block; color: var(--marke); font-size: 18px; margin-bottom: 4px; }
+    .versprechen strong, .optionen strong { display: block; color: var(--marke); font-size: 16px; margin-bottom: 4px; }
     .versprechen p, .optionen p { margin: 0; font-size: 16px; }
     .optionen { grid-template-columns: repeat(3, 1fr); }
     .optionen .opt-preis { margin-top: 8px; font-size: 14px; color: var(--text-leise); }
@@ -155,7 +155,7 @@
       content: counter(s); display: flex; align-items: center; justify-content: center;
       width: 32px; height: 32px; border-radius: 50%; background: var(--marke); color: var(--weiss); font-weight: 700; margin-bottom: 10px;
     }
-    .schritte strong { display: block; color: var(--marke); font-size: 18px; margin-bottom: 4px; }
+    .schritte strong { display: block; color: var(--marke); font-size: 16px; margin-bottom: 4px; }
     .schritte p { margin: 0 0 6px; font-size: 16px; }
     .schritte .zeit { font-size: 14px; color: var(--text-leise); margin: 0; }
     .tabelle { width: 100%; border-collapse: collapse; background: var(--weiss); }
@@ -166,7 +166,7 @@
     details { border: 1px solid var(--linie); border-radius: var(--radius); background: var(--flaeche); margin-bottom: 10px; }
     summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: var(--marke); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--aktion); }
+    summary::after { content: "+"; font-size: 20px; line-height: 1; color: var(--aktion); }
     details[open] summary::after { content: "–"; }
     details > div { padding: 0 18px 14px; }
     details ul { margin: 0; padding-left: 20px; max-width: 70ch; }
@@ -202,13 +202,13 @@
     footer a { color: var(--weiss); }
     footer .platzhalter { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
     footer .platzhalter div { background: rgba(255,255,255,.08); border-radius: 8px; padding: 16px 20px; }
-    footer .platzhalter h3 { color: var(--weiss); font-size: 18px; }
+    footer .platzhalter h3 { color: var(--weiss); font-size: 16px; }
     footer p { color: #E1E8F4; }
     footer nav ul { margin-bottom: 8px; }
 
     /* Handy */
     @media (max-width: 860px) {
-      h1, .start h1 { font-size: 34px; }
+      h1, .start h1 { font-size: 40px; }
       h2 { font-size: 28px; }
       .start .wrap, footer .platzhalter, .ueber .wrap { grid-template-columns: 1fr; }
       .schritte, .orient-liste { grid-template-columns: 1fr; }
@@ -239,15 +239,15 @@
     .seitenkopf h1 { margin-bottom: 8px; }
     .weiter { margin-top: 40px; }
     nav a[aria-current="page"] { border-bottom-color: var(--weiss); }
-    .seitenkopf .lead, .service .lead { font-size: 18px; }
+    .seitenkopf .lead, .service .lead { font-size: 16px; }
 
     /* ===== Stil C: kontrastreich und kompakt (nur Optik, Inhalte unverändert) ===== */
     :root { --radius: 4px; --dunkel-linie: #2B4670; --hell-auf-dunkel: #E1E8F4; }
     section { padding: 56px 0; }
 
     /* Überschriften: markant */
-    h1 { font-size: 44px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
-    h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.015em; }
+    h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    h2 { font-size: 40px; font-weight: 700; letter-spacing: -0.015em; }
     h3 { letter-spacing: -0.005em; }
     .produkte h2::before, .orient h2::before, .ueber h2::before, .service h2:not(.sub)::before {
       content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 14px;
@@ -267,7 +267,7 @@
     .start .btn:hover { background: #E4ECF7; }
     .start .btn-zweit { background: transparent; color: var(--weiss); border-color: var(--weiss); }
     .start .btn-zweit:hover { background: var(--weiss); color: var(--marke); }
-    .start :focus-visible, .seitenband :focus-visible, .kontaktbox :focus-visible { outline-color: var(--weiss); }
+    .start :focus-visible, .seitenband :focus-visible { outline-color: var(--weiss); }
     .start svg { border-radius: var(--radius); border: 1px solid var(--dunkel-linie); }
 
     /* Seitenband der Unterseiten */
@@ -287,9 +287,7 @@
     }
     .orient-liste li, .karte { border-top: 4px solid var(--marke); }
     .bild { border-radius: 2px; }
-    .karte h3 { font-size: 21px; }
-    .karte .btn { background: var(--marke); }
-    .karte .btn:hover { background: #1B3A6B; }
+    .karte h3 { font-size: 20px; }
     .raster { gap: 20px; }
 
     /* Service: Ziffern groß, Linien klar */
@@ -314,20 +312,10 @@
     footer { border-top: 1px solid var(--dunkel-linie); }
 
     @media (max-width: 860px) {
-      h1, .start h1 { font-size: 36px; }
-      h2 { font-size: 30px; }
+      h1, .start h1 { font-size: 40px; }
+      h2 { font-size: 28px; }
       .start { padding: 48px 0; }
-      .kontaktbox h3 { font-size: 24px; }
-    }
-
-    /* Produktkarten: alle fünf in einer Reihe, gleiche Breite und Höhe (ab 1101 px Breite) */
-    @media (min-width: 1101px) {
-      .produkte .wrap { max-width: 1360px; }
-      .raster { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
-      .karte, .karte:nth-child(4), .karte:nth-child(5) { grid-column: auto; padding: 16px; }
-      .karte h3 { font-size: 19px; min-height: calc(3 * 1.2em); margin-bottom: 8px; }
-      .karte .info { font-size: 15px; line-height: 1.5; }
-      .karte .bild { margin-bottom: 12px; }
+      .kontaktbox h3 { font-size: 20px; }
     }
 
     /* Startbild (Foto) */
@@ -371,7 +359,7 @@
        Zurückgesetzt werden gemeinsame Regeln, die sonst neu wirken würden (section-Abstand, Laufweite, Hover, Fußbereich). */
     .seite-reifegrad * { min-width: 0; }
     .seite-reifegrad h1 { font-size: 40px; }
-    .seite-reifegrad h2 { font-size: 24px; letter-spacing: normal; margin-bottom: 4px; }
+    .seite-reifegrad h2 { font-size: 20px; letter-spacing: normal; margin-bottom: 4px; }
     .seite-reifegrad h3 { letter-spacing: normal; }
     .seite-reifegrad a:hover { text-decoration-thickness: auto; }
 
@@ -381,9 +369,9 @@
     .seite-reifegrad .dim { border-top: 2px solid var(--marke); padding-top: 16px; margin-top: 32px; }
     .seite-reifegrad .dim > p { color: var(--text-leise); margin: 0 0 8px; }
     .seite-reifegrad .q { padding: 16px 0; border-bottom: 1px solid var(--linie); }
-    .seite-reifegrad .q h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
+    .seite-reifegrad .q h3 { font-size: 16px; font-weight: 600; margin: 0 0 10px; }
     .seite-reifegrad .opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-    .seite-reifegrad .opts label { display: flex; align-items: center; min-height: 52px; padding: 8px 12px; border: 1px solid var(--linie); border-radius: 4px; background: var(--weiss); cursor: pointer; font-size: 15px; line-height: 1.3; }
+    .seite-reifegrad .opts label { display: flex; align-items: center; min-height: 52px; padding: 8px 12px; border: 1px solid var(--linie); border-radius: 4px; background: var(--weiss); cursor: pointer; font-size: 16px; line-height: 1.3; }
     .seite-reifegrad .opts label:hover { border-color: var(--marke); }
     .seite-reifegrad .opts input { position: absolute; opacity: 0; pointer-events: none; }
     .seite-reifegrad .opts input:checked + label { background: var(--marke); color: var(--weiss); border-color: var(--marke); }
@@ -393,11 +381,11 @@
     .seite-reifegrad .panel { position: sticky; top: 88px; background: var(--marke); color: var(--weiss); border-radius: 4px; padding: 28px; }
     .seite-reifegrad .gauge { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; }
     .seite-reifegrad .ring { width: 132px; height: 132px; }
-    .seite-reifegrad .num { font-size: 52px; font-weight: 700; line-height: 1; }
+    .seite-reifegrad .num { font-size: 56px; font-weight: 700; line-height: 1; }
     .seite-reifegrad .lvl { font-size: 20px; font-weight: 700; margin-top: 6px; }
     .seite-reifegrad .small { font-size: 14px; opacity: .85; }
     .seite-reifegrad .bars { margin: 24px 0 8px; display: grid; gap: 10px; }
-    .seite-reifegrad .bar { display: grid; grid-template-columns: 7em minmax(0, 1fr) 3em; gap: 10px; align-items: center; font-size: 15px; }
+    .seite-reifegrad .bar { display: grid; grid-template-columns: 7em minmax(0, 1fr) 3em; gap: 10px; align-items: center; font-size: 16px; }
     .seite-reifegrad .track { height: 10px; border-radius: 4px; background: rgba(255,255,255,.2); overflow: hidden; }
     .seite-reifegrad .fill { height: 100%; background: var(--teal); width: 0; transition: width .5s ease; }
     .seite-reifegrad .bar b { text-align: right; font-variant-numeric: tabular-nums; }
@@ -420,8 +408,8 @@
 
     @media (max-width: 900px) {
       .seite-reifegrad .test { grid-template-columns: 1fr; gap: 24px; }
-      .seite-reifegrad .panel { position: relative; top: 0; order: -1; }
-      .seite-reifegrad h1 { font-size: 32px; }
+      .seite-reifegrad .panel { position: relative; top: 0; }
+      .seite-reifegrad h1 { font-size: 28px; }
     }
     @media (max-width: 600px) {
       .seite-reifegrad .opts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -438,7 +426,7 @@
     .seite-potenzial * { min-width: 0; }
     .seite-potenzial h1 { font-size: 40px; }
     .seite-potenzial h2 { font-size: 28px; letter-spacing: normal; margin-top: 40px; }
-    .seite-potenzial h3 { font-size: 18px; font-weight: 600; letter-spacing: normal; margin-top: 24px; }
+    .seite-potenzial h3 { font-size: 16px; font-weight: 600; letter-spacing: normal; margin-top: 24px; }
     .seite-potenzial .doc ul, .seite-potenzial .doc ol { max-width: 70ch; padding-left: 22px; margin: 0 0 1em; }
     .seite-potenzial .doc li, .seite-potenzial footer li { margin-bottom: 4px; }
     .seite-potenzial a:hover { text-decoration-thickness: auto; }
@@ -487,7 +475,7 @@
     .seite-potenzial .btn:hover { background: #09585F; border-color: #09585F; }
     .seite-potenzial .btn.zweit { background: var(--weiss); color: var(--aktion); }
     .seite-potenzial .btn.zweit:hover { background: #E4F1F2; }
-    .seite-potenzial .btn.klein-btn { min-height: 36px; padding: 0 14px; font-size: 15px; margin-top: 8px; }
+    .seite-potenzial .btn.klein-btn { min-height: 36px; padding: 0 14px; font-size: 16px; margin-top: 8px; }
     /* mit .seite-potenzial davor, weil die Startseite ebenfalls ein Element mit id="meldung" hat */
     .seite-potenzial #meldung { margin-top: 16px; padding: 12px 16px; border-left: 4px solid var(--aktion); background: var(--flaeche); border-radius: 4px; min-height: 48px; }
     .seite-potenzial #meldung.fehler { border-left-color: #9B1C1C; }
@@ -506,7 +494,7 @@
 
     @media (max-width: 860px) {
       .seite-potenzial .doc { padding: 24px 20px; }
-      .seite-potenzial h1 { font-size: 32px; } .seite-potenzial h2 { font-size: 24px; }
+      .seite-potenzial h1 { font-size: 28px; } .seite-potenzial h2 { font-size: 20px; }
       .seite-potenzial .zwei, .seite-potenzial .zeile { grid-template-columns: 1fr; }
     }
     /* Druckansicht (nur diese Seite; Seitenränder über die benannte Druckseite „angebot“, damit andere Seiten nicht betroffen sind) */
@@ -567,7 +555,7 @@
     .toast:empty { box-shadow: none; border: 0; }
 
     /* Punkt 4 · Preise groß, Hinweise klein */
-    .preis { font-size: 24px; font-weight: 700; color: var(--marke); line-height: 1.15; }
+    .preis { font-size: 28px; font-weight: 700; color: var(--marke); line-height: 1.15; }
     .preis .proz { font-size: 16px; font-weight: 600; }
 
     /* Punkt 5 · Bundles als eigener Abschnitt mit Abstand und sichtbarer Ersparnis */
@@ -579,19 +567,8 @@
       font-size: 14px; font-weight: 700; padding: 3px 10px; border-radius: var(--radius); margin: 0 0 8px;
     }
 
-    /* Punkt 6 · Einleitung, Bundle-Kopf und Links im Produktbereich auf derselben linken Kante wie alle Bereiche */
-    @media (min-width: 1101px) {
-      .produkte .intro, .produkte .bundles-kopf, .produkte .weiter { max-width: 1052px; margin-left: auto; margin-right: auto; }
-    }
-
     /* Punkt 9 · Leistungsumfang: Hinweis auf die Bundles */
     .hinweis-bundles { margin-top: 24px; padding: 12px 16px; background: var(--weiss); border-left: 4px solid var(--aktion); border-radius: var(--radius); }
-
-    /* Punkt 10 · Team: Initialen statt Platzhalterfoto */
-    .portrait.initialen {
-      aspect-ratio: 1; width: min(100%, 112px); border-radius: 50%;
-      background: var(--marke); color: var(--weiss); font-size: 32px; font-weight: 700; letter-spacing: .02em;
-    }
 
     /* Punkt 13 · Offenes Handy-Menü als Liste mit Trennlinien und großen Tippflächen */
     @media (max-width: 860px) {
@@ -614,7 +591,7 @@
     }
     /* Sehr schmale Handys (bis 360 px): etwas enger, damit alles in eine Zeile passt */
     @media (max-width: 360px) {
-      .kopf .logo { font-size: 19px; gap: 6px; }
+      .kopf .logo { font-size: 20px; gap: 6px; }
       .warenkorb { padding: 6px 8px; }
       .menue-btn { padding: 6px 10px; }
     }
@@ -638,7 +615,7 @@
     .seite-produkt .preis-hinweis { margin-bottom: 20px; }
     /* Drei Abschnitte Enthalten, Sie erhalten, Ihre Mitwirkung: h2 mit kurzem Balken */
     .seite-produkt .produkt-umfang { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--linie); }
-    .seite-produkt .produkt-umfang h2 { font-size: 24px; margin-bottom: 12px; }
+    .seite-produkt .produkt-umfang h2 { font-size: 20px; margin-bottom: 12px; }
     .seite-produkt .produkt-umfang h2::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 12px; }
     .seite-produkt .produkt-umfang ul { margin: 0; padding-left: 20px; }
     .seite-produkt .produkt-umfang li { margin-bottom: 6px; }
@@ -679,18 +656,18 @@
     /* Artikelzeilen: Name | Menge | Summe | Entfernen; bis 560 px gestapelt */
     .korb-liste { list-style: none; margin: 0 0 32px; padding: 0; border-top: 4px solid var(--marke); }
     .korb-zeile { display: grid; grid-template-columns: minmax(0, 1fr) auto 9em auto; gap: 12px 24px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--linie); }
-    .korb-name a { font-size: 18px; font-weight: 600; }
+    .korb-name a { font-size: 16px; font-weight: 600; }
     .korb-einzel { display: block; margin-top: 2px; color: var(--text-leise); }
     .korb-menge { display: flex; align-items: center; gap: 8px; }
     .menge-btn {
       width: 40px; height: 40px; padding: 0; cursor: pointer;
       background: var(--weiss); color: var(--aktion); border: 2px solid var(--aktion); border-radius: var(--radius);
-      font: inherit; font-size: 22px; font-weight: 700; line-height: 1;
+      font: inherit; font-size: 20px; font-weight: 700; line-height: 1;
     }
     .menge-btn:hover { background: #E4F1F2; }
     .menge-btn:disabled { background: var(--flaeche); color: var(--text-leise); border-color: var(--linie); cursor: not-allowed; }
     .menge-wert { min-width: 5.5em; text-align: center; font-weight: 600; }
-    .korb-summe { margin: 0; text-align: right; font-size: 18px; font-weight: 700; color: var(--marke); }
+    .korb-summe { margin: 0; text-align: right; font-size: 16px; font-weight: 700; color: var(--marke); }
     .korb-entfernen {
       background: none; border: 0; padding: 8px 4px; min-height: 40px; cursor: pointer;
       color: var(--aktion); font: inherit; text-decoration: underline; text-underline-offset: 3px;
@@ -705,7 +682,7 @@
     .korb-summen dd { text-align: right; white-space: nowrap; }
     .korb-summen .gesamt { border-top: 2px solid var(--marke); margin-top: 6px; padding-top: 12px; align-items: baseline; }
     .korb-summen .gesamt dt { font-weight: 700; color: var(--marke); }
-    .korb-summen .gesamt dd { font-size: 24px; font-weight: 700; color: var(--marke); }
+    .korb-summen .gesamt dd { font-size: 28px; font-weight: 700; color: var(--marke); }
     .korb-hinweis { color: var(--text-leise); }
     .korb-abschluss .btn { width: 100%; text-align: center; }
 
@@ -715,4 +692,195 @@
       .korb-entfernen { justify-self: start; }
       .menge-wert { min-width: 4.5em; }
       .korb-abschluss { max-width: none; }
+    }
+
+    /* ===== 14 · Design-Überarbeitung (Vorschlag 26.11.2026, Punkte 1–16) =====
+       Schriftstufen: 14 · 16 · 20 · 28 · 40 · 56 px. Petrolgrün = Hauptaktion, Umriss = Nebenaktion. */
+    .seite-recht .recht-titel { margin-top: 0; }
+    .seite-recht main { min-height: 62vh; background: var(--weiss); }
+    .weiter { display: flex; flex-wrap: wrap; gap: 12px; }
+    .weiter .btn-zweit, .kauf-knoepfe .btn-zweit, .start-knoepfe .btn-zweit { margin: 0; }
+    .btn { text-align: center; min-height: 48px; }
+    a.btn { display: inline-flex; align-items: center; justify-content: center; }
+
+    /* Punkt 8 · Menü: Erstgespräch als Button, aktueller Bereich markiert */
+    nav a[aria-current="true"] { border-bottom-color: var(--weiss); }
+    nav .nav-cta a { background: var(--weiss); color: var(--marke); font-weight: 600; padding: 8px 14px; border: 2px solid var(--weiss); border-radius: var(--radius); }
+    nav .nav-cta a:hover { background: #E4ECF7; }
+    nav ul { align-items: center; }
+    @media (min-width: 861px) and (max-width: 1000px) {
+      .kopf .wrap { gap: 14px; } nav ul { gap: 14px; }
+      .korb-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    }
+    @media (max-width: 860px) {
+      .kopf.menue-js nav ul { align-items: stretch; }
+      .kopf.menue-js nav a[aria-current="true"] { font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
+      .kopf.menue-js nav .nav-cta { border-top: 0; padding: 8px 0; }
+      .kopf.menue-js nav .nav-cta a { justify-content: center; text-decoration: none; }
+    }
+
+    /* Punkt 7 · Startbereich */
+    .start-knoepfe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .start .start-knoepfe .btn { margin: 0; padding-left: 18px; padding-right: 18px; }
+    .orient-liste .btn { margin: 0; }
+    @media (min-width: 1101px) { .start .wrap { grid-template-columns: 1.35fr 1fr; } }
+
+    /* Häkchenliste (Karten und Bundles) und aufklappbare Details */
+    .haken { list-style: none; margin: 0; padding: 0; }
+    .haken li { position: relative; padding-left: 24px; margin-bottom: 4px; line-height: 1.45; }
+    .haken li::before { content: ""; position: absolute; left: 4px; top: .3em; width: 6px; height: 11px; border: solid var(--aktion); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    details.mehr { background: none; border: 0; margin: 0 0 16px; }
+    details.mehr > summary { padding: 8px 0; justify-content: flex-start; gap: 8px; color: var(--aktion); }
+    details.mehr > div { padding: 0; }
+    @media (min-width: 561px) { details.mehr > summary { display: none; } }
+
+    /* Punkt 3 · Paketkarten: 3 + 2, Nutzen, Stichpunkte, Laufzeit, Preis */
+    .produkte .raster { gap: 24px; }
+    .karte .nutzen { font-size: 20px; font-weight: 600; line-height: 1.3; margin: 0 0 12px; }
+    .karte h3 { font-size: 16px; margin-bottom: 8px; }
+    .karte.bundle h3 { font-size: 20px; }
+    .karte details.mehr { flex-grow: 1; }
+    .karte .dauer { color: var(--text-leise); margin: 0 0 8px; }
+    .karte .ausschluss { color: var(--text-leise); font-size: 14px; margin: 8px 0 0; padding-left: 24px; }
+    @media (min-width: 861px) and (max-width: 1000px) { .raster .karte:last-child { grid-column: 1 / -1; } }
+
+    /* Punkt 9 · Empfohlenes Bundle */
+    .karte.bundle.empfohlen { border: 2px solid var(--aktion); border-top-width: 4px; position: relative; }
+    .empfehlung { position: absolute; top: -17px; left: 16px; margin: 0; background: var(--weiss); color: var(--aktion); border: 2px solid var(--aktion); border-radius: var(--radius); font-size: 14px; font-weight: 700; line-height: 1.5; padding: 2px 10px; }
+    .bundles { margin-top: 32px; }
+
+    /* Punkt 11 · Beispielergebnis */
+    .beispiel { background: var(--weiss); }
+    .beispiel h2::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 14px; }
+    .muster { border: 2px dashed #6B7685; border-radius: var(--radius); padding: 24px; margin-top: 24px; }
+    .muster-marke { font-size: 14px; font-weight: 700; color: var(--marke); background: #E4ECF7; display: inline-block; padding: 4px 10px; border-radius: var(--radius); }
+    .muster details.mehr { margin: 0; }
+    .muster-fazit { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+    .muster-fazit h3 { font-size: 20px; margin-bottom: 4px; }
+    .muster-fazit p { margin: 0; }
+
+    /* Punkt 5 · Tabellen werden am Handy zu Karten */
+    @media (max-width: 700px) {
+      .service .karten-tabelle, .karten-tabelle { display: block; border: 0; background: none; overflow: visible; }
+      .karten-tabelle caption { display: block; }
+      .karten-tabelle thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .karten-tabelle tbody { display: grid; gap: 12px; }
+      .karten-tabelle tr { display: block; background: var(--weiss); border: 1px solid var(--linie); border-top: 4px solid var(--marke); border-radius: var(--radius); padding: 12px 16px; }
+      .karten-tabelle tbody th { display: block; border: 0; padding: 0 0 8px; }
+      .karten-tabelle td { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 12px; border: 0; padding: 2px 0; }
+      .karten-tabelle td::before { content: attr(data-label); color: var(--text-leise); font-size: 14px; line-height: 1.8; }
+    }
+
+    /* Punkt 10 · Produktseite: Kaufbox */
+    .kaufbox { border: 1px solid var(--linie); border-top: 4px solid var(--marke); border-radius: var(--radius); background: var(--flaeche); padding: 20px; margin-top: 8px; }
+    .seite-produkt .kaufbox .laufzeit { margin-bottom: 12px; }
+    .seite-produkt .kaufbox .preis-hinweis { margin-bottom: 16px; }
+    .kauf-knoepfe { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Punkt 12 · Illustrierte Avatare */
+    .avatar { display: block; width: min(100%, 112px); height: auto; border-radius: 50%; margin-bottom: 10px; }
+
+    /* Punkt 14 · Kontaktblock hell, Fußbereich bleibt dunkel */
+    .kontakt .kontaktbox { background: #E4ECF7; color: var(--text); border: 1px solid var(--linie); border-left: 8px solid var(--aktion); }
+    .kontakt .kontaktbox h3 { color: var(--marke); }
+    .kontakt .kontaktbox p { color: var(--text); }
+    .kontakt .kontaktbox .btn { background: var(--aktion); color: var(--weiss); }
+    .kontakt .kontaktbox .btn:hover { background: #09585F; }
+    .kontakt .kontaktbox .btn:focus-visible { outline-color: var(--marke); }
+
+    /* Punkt 15 · Schlanker Fußbereich */
+    footer nav a { display: inline-flex; align-items: center; min-height: 32px; }
+    footer nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; border-bottom-color: transparent; }
+    footer .klein { margin-top: 12px; margin-bottom: 0; }
+
+    /* Punkt 6 · Rückmeldung: kurz, mit Link; am Rechner oben rechts unter dem Kopf */
+    .toast { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+    .toast a { color: var(--weiss); font-weight: 700; display: inline-flex; align-items: center; min-height: 32px; }
+    .toast a:focus-visible { outline-color: var(--weiss); }
+    @media (min-width: 861px) { .toast { left: auto; right: 16px; bottom: auto; top: 88px; transform: none; } }
+
+    /* Punkt 16 · Warenkorb: Liste links, Zusammenfassung als Box rechts */
+    .korb-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start; }
+    .korb-zeile { grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 12px 20px; }
+    .korb-name { grid-column: 1; }
+    .korb-summe { grid-column: 3; min-width: 7em; }
+    .korb-entfernen { grid-column: 4; }
+    .korb-liste { margin-bottom: 16px; }
+    .korb-weiter { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+    .seite-warenkorb .korb-abschluss { max-width: none; margin: 0; position: sticky; top: 96px; background: var(--flaeche); border: 1px solid var(--linie); border-top: 4px solid var(--marke); border-radius: var(--radius); padding: 20px; }
+    .seite-warenkorb #korb .korb-box-titel { font-size: 20px; margin-bottom: 8px; }
+    .seite-warenkorb #korb .korb-box-titel::before { content: none; }
+    @media (max-width: 960px) {
+      .korb-layout { grid-template-columns: 1fr; gap: 24px; }
+      .seite-warenkorb .korb-abschluss { position: static; }
+    }
+    @media (max-width: 560px) {
+      .korb-zeile { grid-template-columns: minmax(0, 1fr) auto; }
+      .korb-name { grid-column: 1 / -1; }
+      .korb-menge { grid-column: 1; }
+      .korb-summe { grid-column: 2; min-width: 0; }
+      .korb-entfernen { grid-column: 1 / -1; }
+      .korb-zeile { row-gap: 4px; }
+      .korb-zeile:not(:has(.korb-menge)) .korb-summe { grid-row: 2; }
+      .korb-zeile:not(:has(.korb-menge)) .korb-entfernen { grid-column: 1; grid-row: 2; }
+    }
+
+    /* Punkt 1 · Reifegrad-Test: Fortschrittsanzeige (nur wenn das Ergebnis unter den Fragen steht) */
+    .seite-reifegrad .fortschritt { display: none; position: sticky; top: 69px; z-index: 5; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px; background: var(--flaeche); padding: 10px 0 12px; border-bottom: 1px solid var(--linie); font-weight: 600; color: var(--marke); }
+    .seite-reifegrad .fortschritt .track { flex-basis: 100%; height: 8px; background: var(--linie); }
+    .seite-reifegrad .fortschritt .fill { background: var(--aktion); }
+    .seite-reifegrad .q { scroll-margin-top: 150px; }
+    @media (max-width: 900px) {
+      .seite-reifegrad .fortschritt { display: flex; }
+      .seite-reifegrad .opts input + label { scroll-margin-top: 150px; }
+    }
+
+    /* Punkt 4 · Handy: kompakt */
+    @media (max-width: 860px) {
+      .muster-fazit { grid-template-columns: 1fr; gap: 12px; }
+    }
+    @media (max-width: 560px) {
+      h1, .start h1 { font-size: 40px; }
+      .seite-produkt h1, .seitenband h1, .seite-reifegrad h1, .seite-potenzial h1 { font-size: 28px; }
+      section { padding: 32px 0; }
+      .wrap { padding-left: 16px; padding-right: 16px; }
+      .start { padding: 28px 0; }
+      .start p.lead { font-size: 16px; }
+      .start .tag { margin-bottom: 12px; }
+      .start-knoepfe { margin-top: 16px; }
+      .start-knoepfe .btn { width: 100%; }
+      .start .wrap { gap: 24px; }
+      .start img { aspect-ratio: 4 / 3; width: 100%; max-width: 280px; margin: 0 auto; }
+      .orient-liste { margin-top: 16px; gap: 12px; }
+      .orient-liste li { padding: 16px; }
+      .muster { padding: 16px; margin-top: 16px; }
+
+      .produkte .intro { margin-bottom: 16px; }
+      .produkte .raster { gap: 12px; }
+      .raster .karte { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 12px; padding: 16px; }
+      .raster .karte > * { grid-column: 1 / -1; }
+      .raster .karte .bild-link { grid-column: 1; grid-row: 1; align-self: start; }
+      .raster .karte .karte-kopf { grid-column: 2; grid-row: 1; }
+      .raster .karte .bild { aspect-ratio: 16 / 9; margin: 0; }
+      .karte .nutzen { margin: 12px 0 0; font-size: 16px; }
+      .karte details.mehr { margin-bottom: 4px; }
+      .karte .preis-hinweis { margin-bottom: 12px; }
+      .bundles-kopf { margin-top: 40px; }
+      .bundles { margin-top: 24px; gap: 24px; }
+      .bundles .karte { padding: 16px; }
+      .weiter { margin-top: 24px; }
+      .weiter .btn { width: 100%; }
+
+      .schritte { gap: 8px; }
+      .schritte li { display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 8px; padding: 12px; }
+      .schritte li::before { grid-column: 1; grid-row: 1 / span 3; margin: 0; font-size: 28px; }
+      .schritte li > * { grid-column: 2; }
+      .schritte p { margin-bottom: 0; }
+      .service .sub { margin-top: 24px; }
+      .avatar { width: 72px; }
+      .kontakt { padding-bottom: 32px; }
+      .kontaktbox { padding: 20px; }
+      .kontaktbox .btn { width: 100%; }
+      footer { padding: 28px 0; }
+      .kauf-knoepfe .btn { width: 100%; }
     }

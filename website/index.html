@@ -32,7 +32,7 @@
           <li><a href="#produkte">Leistungen</a></li>
           <li><a href="service/index.html">Service</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li class="nav-cta"><a href="#kontakt">Erstgespräch</a></li>
         </ul>
       </nav>
       <a class="warenkorb" href="warenkorb.html" id="warenkorb-link"><svg class="korb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h2.5l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span class="korb-text">Warenkorb</span> <span class="korb-zahl" id="anzahl">0</span></a>
@@ -46,8 +46,8 @@
         <div>
           <span class="tag">Für Industrie und Mittelstand</span>
           <h1>KI, die in Ihrem Unternehmen ankommt.</h1>
-          <p class="lead">Erst orientieren, dann starten: Reifegrad-Test, Potenzial-Check und fünf klar umrissene Leistungspakete von der Strategie bis zum Head of AI. Festpreis, feste Laufzeit, ohne Überraschungen.</p>
-          <a class="btn" href="#orientierung">Wo stehen Sie? Zum Test</a><a class="btn btn-zweit" href="#kontakt">Erstgespräch anfragen</a>
+          <p class="lead">Starten Sie mit dem kostenlosen Selbsttest und wählen Sie dann Ihr Leistungspaket. Mit Festpreis, fester Laufzeit und ohne Überraschungen.</p>
+          <div class="start-knoepfe"><a class="btn" href="orientierung/reifegrad-test.html">Kostenlosen Reifegrad-Test starten (5 Min.)</a><a class="btn btn-zweit" href="#kontakt">Erstgespräch anfragen</a></div>
         </div>
         <img src="images/start.svg" width="640" height="480" alt="Illustration: Eine Fabrikhalle sendet Daten an den KI-Baustein von Klarwerk AI, daraus entsteht eine ansteigende Roadmap mit Zielflagge">
       </div>
@@ -69,9 +69,40 @@
             <p class="schritt-tag">Schritt 2 · Festpreis 1.290 € netto</p>
             <h3>KI-Potenzial-Check</h3>
             <p>Ein Workshop-Halbtag mit Ergebnisbericht, 5 priorisierten Anwendungsfällen und Roadmap. Das Angebot füllen Sie online aus, unterschreiben es und senden es zurück.</p>
-            <a class="btn" href="orientierung/potenzial-check.html">Angebot ansehen und ausfüllen</a>
+            <a class="btn btn-zweit" href="orientierung/potenzial-check.html">Angebot ansehen und ausfüllen</a>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- 2b · Beispielergebnis (Muster, erfunden) -->
+    <section class="beispiel" id="beispiel" aria-labelledby="beispiel-titel">
+      <div class="wrap">
+        <h2 id="beispiel-titel">So sieht ein Ergebnis aus</h2>
+        <p>Auszug aus einem Musterbericht zum KI-Potenzial-Check: fünf Anwendungsfälle, bewertet und in eine Reihenfolge gebracht.</p>
+        <div class="muster">
+          <p class="muster-marke">Beispiel · Betrieb, Anwendungsfälle und Bewertungen sind erfunden</p>
+          <details class="mehr">
+            <summary>Musterbericht anzeigen</summary>
+            <div class="muster-inhalt">
+              <table class="tabelle karten-tabelle" role="table">
+                <caption>Bewertungsmatrix für einen erfundenen Metallbetrieb</caption>
+                <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Anwendungsfall</th><th scope="col" role="columnheader">Nutzen</th><th scope="col" role="columnheader">Aufwand</th><th scope="col" role="columnheader">Datenlage</th><th scope="col" role="columnheader">Risiko</th></tr></thead>
+                <tbody role="rowgroup">
+                <tr role="row"><th scope="row" role="rowheader">1. Angebotsentwürfe aus Kundenanfragen</th><td role="cell" data-label="Nutzen">hoch</td><td role="cell" data-label="Aufwand">niedrig</td><td role="cell" data-label="Datenlage">gut</td><td role="cell" data-label="Risiko">niedrig</td></tr>
+                <tr role="row"><th scope="row" role="rowheader">2. Wartungsprotokolle automatisch auswerten</th><td role="cell" data-label="Nutzen">hoch</td><td role="cell" data-label="Aufwand">mittel</td><td role="cell" data-label="Datenlage">lückenhaft</td><td role="cell" data-label="Risiko">niedrig</td></tr>
+                <tr role="row"><th scope="row" role="rowheader">3. Assistent für Arbeitsanweisungen</th><td role="cell" data-label="Nutzen">mittel</td><td role="cell" data-label="Aufwand">niedrig</td><td role="cell" data-label="Datenlage">gut</td><td role="cell" data-label="Risiko">niedrig</td></tr>
+                <tr role="row"><th scope="row" role="rowheader">4. Fragen zu Kennzahlen in normaler Sprache</th><td role="cell" data-label="Nutzen">mittel</td><td role="cell" data-label="Aufwand">mittel</td><td role="cell" data-label="Datenlage">gut</td><td role="cell" data-label="Risiko">niedrig</td></tr>
+                <tr role="row"><th scope="row" role="rowheader">5. Sichtprüfung mit Bilderkennung</th><td role="cell" data-label="Nutzen">hoch</td><td role="cell" data-label="Aufwand">hoch</td><td role="cell" data-label="Datenlage">lückenhaft</td><td role="cell" data-label="Risiko">mittel</td></tr>
+                </tbody>
+              </table>
+              <div class="muster-fazit">
+                <div><h3>Quick Win</h3><p>Angebotsentwürfe: hoher Nutzen bei niedrigem Aufwand, in unter 4 Wochen umsetzbar.</p></div>
+                <div><h3>Nächste 90 Tage</h3><p>1. Quick Win umsetzen · 2. Daten der Wartung ordnen · 3. Assistent für Arbeitsanweisungen vorbereiten</p></div>
+              </div>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -86,9 +117,10 @@
         <ul class="raster">
           <li class="karte">
             <a class="bild-link" href="produkte/strategie.html" tabindex="-1" aria-hidden="true"><img class="bild" src="images/produkt-1.svg" alt="Illustration: Chatfenster mit Frage und Antwort des KI-Assistenten neben einer Analyse mit steigender Kurve und drei Meilensteinen" width="640" height="360"></a>
-            <p class="kat">Strategie</p>
-            <h3><a href="produkte/strategie.html">Conversational AI &amp; Digital Analytics Strategy</a></h3>
-            <p class="info">Strategie-Paket für Chat- und Sprachassistenten sowie Datenanalyse: Ist-Aufnahme, Use-Case-Bewertung und Roadmap in 4 Wochen.</p>
+            <div class="karte-kopf"><p class="kat">Strategie</p><h3><a href="produkte/strategie.html">Conversational AI &amp; Digital Analytics Strategy</a></h3></div>
+            <p class="nutzen">Wissen, welche KI-Anwendungen sich lohnen</p>
+            <details class="mehr" open><summary>Leistungen</summary><ul class="haken"><li>Ist-Aufnahme zu Chat, Sprache und Daten</li><li>Use-Case-Bewertung</li><li>Roadmap</li></ul></details>
+            <p class="dauer">Laufzeit: 4 Wochen</p>
             <p class="preis">5.200,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt.</p>
             <button class="btn" type="button" data-id="strategie">In den Warenkorb</button>
@@ -96,9 +128,10 @@
 
           <li class="karte">
             <a class="bild-link" href="produkte/governance.html" tabindex="-1" aria-hidden="true"><img class="bild" src="images/produkt-4.svg" alt="Illustration: Schutzschild mit Schloss zwischen einer Checkliste und drei Rollen mit Verantwortlichen" width="640" height="360"></a>
-            <p class="kat">Recht &amp; Daten</p>
-            <h3><a href="produkte/governance.html">Data Governance, Compliance &amp; AI</a></h3>
-            <p class="info">Datenverantwortung, DSGVO und EU-AI-Act im Griff: Reifegrad-Check, Rollenmodell und Richtlinienpaket für Ihren KI-Einsatz. Keine Rechtsberatung.</p>
+            <div class="karte-kopf"><p class="kat">Recht &amp; Daten</p><h3><a href="produkte/governance.html">Data Governance, Compliance &amp; AI</a></h3></div>
+            <p class="nutzen">Klare Regeln für Daten und KI</p>
+            <details class="mehr" open><summary>Leistungen</summary><ul class="haken"><li>Reifegrad-Check (DSGVO, EU-AI-Act)</li><li>Rollenmodell</li><li>Richtlinienpaket, keine Rechtsberatung</li></ul></details>
+            <p class="dauer">Laufzeit: 4 Wochen</p>
             <p class="preis">5.900,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt.</p>
             <button class="btn" type="button" data-id="governance">In den Warenkorb</button>
@@ -106,9 +139,10 @@
 
           <li class="karte">
             <a class="bild-link" href="produkte/automatisierung.html" tabindex="-1" aria-hidden="true"><img class="bild" src="images/produkt-3.svg" alt="Illustration: Drei Arbeitsabläufe aus verbundenen Bausteinen, automatisierte Schritte sind hervorgehoben" width="640" height="360"></a>
-            <p class="kat">Automatisierung</p>
-            <h3><a href="produkte/automatisierung.html">AI Automation &amp; LowCode Integration</a></h3>
-            <p class="info">Wiederkehrende Abläufe automatisieren, ohne Programmieraufwand: zwei Prozesse mit LowCode-Werkzeugen umgesetzt und dokumentiert.</p>
+            <div class="karte-kopf"><p class="kat">Automatisierung</p><h3><a href="produkte/automatisierung.html">AI Automation &amp; LowCode Integration</a></h3></div>
+            <p class="nutzen">Routineabläufe ohne Programmieren automatisieren</p>
+            <details class="mehr" open><summary>Leistungen</summary><ul class="haken"><li>2 Prozesse umgesetzt</li><li>LowCode-Werkzeuge</li><li>Dokumentiert</li></ul></details>
+            <p class="dauer">Laufzeit: 5 Wochen</p>
             <p class="preis">8.900,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt.</p>
             <button class="btn" type="button" data-id="automatisierung">In den Warenkorb</button>
@@ -116,9 +150,10 @@
 
           <li class="karte">
             <a class="bild-link" href="produkte/agenten-bi.html" tabindex="-1" aria-hidden="true"><img class="bild" src="images/produkt-2.svg" alt="Illustration: Drei Datenbanken speisen einen KI-Agenten, der ein Dashboard mit Diagrammen füllt" width="640" height="360"></a>
-            <p class="kat">Agenten &amp; BI</p>
-            <h3><a href="produkte/agenten-bi.html">AI Agents &amp; Generative Business Intelligence</a></h3>
-            <p class="info">Ein KI-Agent beantwortet Fragen zu Ihren Kennzahlen in normaler Sprache. Pilot mit Ihren Daten, Dashboard und Übergabe in 6 Wochen.</p>
+            <div class="karte-kopf"><p class="kat">Agenten &amp; BI</p><h3><a href="produkte/agenten-bi.html">AI Agents &amp; Generative Business Intelligence</a></h3></div>
+            <p class="nutzen">Kennzahlen in normaler Sprache abfragen</p>
+            <details class="mehr" open><summary>Leistungen</summary><ul class="haken"><li>Pilot mit Ihren Daten</li><li>Dashboard</li><li>Übergabe</li></ul></details>
+            <p class="dauer">Laufzeit: 6 Wochen</p>
             <p class="preis">11.900,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt.</p>
             <button class="btn" type="button" data-id="agenten-bi">In den Warenkorb</button>
@@ -126,9 +161,10 @@
 
           <li class="karte">
             <a class="bild-link" href="produkte/head-of-ai.html" tabindex="-1" aria-hidden="true"><img class="bild" src="images/produkt-5.svg" alt="Illustration: Führungskraft zeigt vor dem Führungsteam eine ansteigende Roadmap mit Meilensteinen" width="640" height="360"></a>
-            <p class="kat">Führung &amp; Strategie</p>
-            <h3><a href="produkte/head-of-ai.html">Strategic AI Business Management (Head of AI)</a></h3>
-            <p class="info">Ihr Head of AI auf Zeit: Roadmap, Budget und Projektpriorisierung mit Berichten an die Geschäftsleitung. Mindestlaufzeit 3 Monate.</p>
+            <div class="karte-kopf"><p class="kat">Führung &amp; Strategie</p><h3><a href="produkte/head-of-ai.html">Strategic AI Business Management (Head of AI)</a></h3></div>
+            <p class="nutzen">KI-Führung auf Zeit für Ihr Unternehmen</p>
+            <details class="mehr" open><summary>Leistungen</summary><ul class="haken"><li>Roadmap und Budget</li><li>Projektpriorisierung</li><li>Berichte an die Geschäftsleitung</li></ul></details>
+            <p class="dauer">Laufzeit: monatlich, mind. 3 Monate</p>
             <p class="preis">6.900,00 €<span class="proz"> / Monat</span></p>
             <p class="preis-hinweis">zzgl. MwSt.</p>
             <button class="btn" type="button" data-id="head-of-ai">In den Warenkorb</button>
@@ -140,10 +176,11 @@
           <p>Jedes Paket bleibt einzeln buchbar. Wer mehrere Pakete zusammen bucht, spart rund 5 Prozent. Die Pakete laufen nacheinander, die Laufzeit ist die Summe der Einzelpakete.</p>
         </div>
         <ul class="bundles" aria-labelledby="bundles-titel">
-          <li class="karte bundle">
+          <li class="karte bundle empfohlen">
+            <p class="empfehlung">Empfohlen zum Einstieg</p>
             <p class="kat">Bundle · 8 Wochen</p>
             <h3>Startpaket: Strategie + Governance</h3>
-            <p class="info"><a href="produkte/strategie.html">Conversational AI &amp; Digital Analytics Strategy</a> und <a href="produkte/governance.html">Data Governance, Compliance &amp; AI</a>: erst die Roadmap, dann die Regeln. Keine Rechtsberatung.</p>
+            <details class="mehr" open><summary>Das ist enthalten</summary><ul class="haken"><li>Strategie: Roadmap für KI-Anwendungen</li><li>Governance: Rollen und Richtlinien</li><li>Erst die Roadmap, dann die Regeln</li></ul><p class="ausschluss">Keine Rechtsberatung.</p></details>
             <p class="ersparnis">Sie sparen 500 €</p>
             <p class="preis">10.600,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt. · statt 11.100 €</p>
@@ -152,7 +189,7 @@
           <li class="karte bundle">
             <p class="kat">Bundle · 11 Wochen</p>
             <h3>Umsetzungspaket: Automatisierung + Agenten &amp; BI</h3>
-            <p class="info"><a href="produkte/automatisierung.html">AI Automation &amp; LowCode Integration</a> (2 Prozesse) und <a href="produkte/agenten-bi.html">AI Agents &amp; Generative Business Intelligence</a>: erst Abläufe automatisieren, dann Fragen an Ihre Kennzahlen stellen.</p>
+            <details class="mehr" open><summary>Das ist enthalten</summary><ul class="haken"><li>Automatisierung: 2 Prozesse</li><li>Agenten &amp; BI: Pilot-Agent und Dashboard</li><li>Erst Abläufe, dann Kennzahlen</li></ul></details>
             <p class="ersparnis">Sie sparen 1.000 €</p>
             <p class="preis">19.800,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt. · statt 20.800 €</p>
@@ -161,7 +198,7 @@
           <li class="karte bundle">
             <p class="kat">Bundle · 19 Wochen</p>
             <h3>Komplettpaket: Vier Pakete in einem</h3>
-            <p class="info"><a href="produkte/strategie.html">Strategie</a>, <a href="produkte/governance.html">Governance</a>, <a href="produkte/automatisierung.html">Automatisierung</a> und <a href="produkte/agenten-bi.html">Agenten &amp; BI</a> in der Reihenfolge, in der Unternehmen KI meist einführen. Das Head-of-AI-Paket buchen Sie bei Bedarf monatlich dazu.</p>
+            <details class="mehr" open><summary>Das ist enthalten</summary><ul class="haken"><li>Strategie und Governance</li><li>Automatisierung und Agenten &amp; BI</li><li>In der üblichen Einführungsreihenfolge</li></ul><p class="ausschluss">Nicht im Preis: Head of AI, bei Bedarf monatlich zubuchbar.</p></details>
             <p class="ersparnis">Sie sparen 1.900 €</p>
             <p class="preis">30.000,00 €</p>
             <p class="preis-hinweis">zzgl. MwSt. · statt 31.900 €</p>
@@ -189,7 +226,7 @@
           <li><strong>Nachbetreuung</strong><p>30 Tage Support per E-Mail plus 1 Review-Termin.</p><p class="zeit">nach der Übergabe</p></li>
         </ol>
 
-        <p class="weiter"><a class="btn" href="service/index.html">Service im Detail</a><a class="btn btn-zweit" href="service/faq.html">Fragen und Antworten</a></p>
+        <p class="weiter"><a class="btn btn-zweit" href="service/index.html">Service im Detail</a><a class="btn btn-zweit" href="service/faq.html">Fragen und Antworten</a></p>
       </div>
     </section>
 
@@ -203,19 +240,19 @@
         </div>
         <ul class="team" aria-label="Unser Team (erfundene Personen)">
           <li>
-            <div class="portrait initialen" aria-hidden="true">RE</div>
+            <img class="avatar" src="images/team-1.svg" alt="" width="120" height="120">
             <strong>Rachid Eddouks</strong><span>Geschäftsführung</span>
           </li>
           <li>
-            <div class="portrait initialen" aria-hidden="true">ML</div>
+            <img class="avatar" src="images/team-2.svg" alt="" width="120" height="120">
             <strong>Mara Lenz</strong><span>Strategie &amp; Head of AI</span>
           </li>
           <li>
-            <div class="portrait initialen" aria-hidden="true">JB</div>
+            <img class="avatar" src="images/team-3.svg" alt="" width="120" height="120">
             <strong>Jonas Brandt</strong><span>Daten &amp; Automatisierung</span>
           </li>
           <li>
-            <div class="portrait initialen" aria-hidden="true">SK</div>
+            <img class="avatar" src="images/team-4.svg" alt="" width="120" height="120">
             <strong>Selin Kaya</strong><span>Governance &amp; Compliance</span>
           </li>
         </ul>
@@ -243,21 +280,11 @@
       <h2>Klarwerk AI · Demo-Shop</h2>
       <nav aria-label="Rechtliches">
         <ul>
-          <li><a href="#impressum">Impressum</a></li>
-          <li><a href="#datenschutz">Datenschutzerklärung</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
-      <div class="platzhalter">
-        <div id="impressum">
-          <h3>Impressum (Platzhalter)</h3>
-          <p>Hier stehen später Name, Anschrift und Kontaktdaten des Anbieters nach § 5 DDG. Im Demo-Shop sind keine echten Angaben hinterlegt.</p>
-        </div>
-        <div id="datenschutz">
-          <h3>Datenschutzerklärung (Platzhalter)</h3>
-          <p>Hier steht später, welche personenbezogenen Daten wofür verarbeitet werden (Art. 13 DSGVO). Diese Seite lädt keine Schriften oder Bilder von fremden Servern.</p>
-        </div>
-      </div>
       <p class="klein">Alle Firmen, Produkte, Preise und Daten sind erfunden. Übungsprojekt, keine Rechtsberatung. Bildnachweis: alle Grafiken einschließlich Titelbild selbst erstellt.</p>
     </div>
   </footer>

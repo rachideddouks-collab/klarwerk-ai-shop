@@ -46,6 +46,10 @@
       const {per, done, pct} = calc();
       document.getElementById("score").textContent = pct + " %";
       document.getElementById("count").textContent = done + " von 12 Fragen beantwortet";
+      document.getElementById("fort-text").textContent = done + " von " + Q.length + " beantwortet";
+      document.getElementById("fort-fill").style.width = Math.round(done/Q.length*100) + "%";
+      document.getElementById("fort-link").hidden = done < Q.length;
+      document.getElementById("send").classList.toggle("main", done === Q.length);
       document.getElementById("arc").style.strokeDashoffset = (314.16*(1-pct/100)).toFixed(1);
       let lv = LV[0]; LV.forEach(l => { if (pct >= l[0]) lv = l; });
       document.getElementById("level").textContent = done ? lv[1] : "Noch keine Antworten";
@@ -58,7 +62,7 @@
       });
       const rec = document.getElementById("rec");
       if (done < Q.length) { rec.innerHTML = `<strong>Ihr nächster Schritt</strong><p>Noch ${Q.length-done} Fragen, dann erscheint hier Ihre Empfehlung.</p>`; return; }
-      rec.innerHTML = `<strong>${lv[2]} Größter Hebel: ${weak.n}</strong><p>${weak.tip}</p><p>Passendes Paket: <a href="../index.html#produkte">${weak.pk}</a></p><p>Einstieg: <a href="potenzial-check.html">KI-Potenzial-Check (1.290 € netto)</a>, Angebot online ausfüllen und unterschreiben.</p><p><a class="btn main" href="mailto:kontakt@klarwerk-ai.example?subject=Erstgespr%C3%A4ch%20anfragen">Erstgespräch anfragen</a></p>`;
+      rec.innerHTML = `<strong>${lv[2]} Größter Hebel: ${weak.n}</strong><p>${weak.tip}</p><p>Passendes Paket: <a href="../index.html#produkte">${weak.pk}</a></p><p>Einstieg: <a href="potenzial-check.html">KI-Potenzial-Check (1.290 € netto)</a>, Angebot online ausfüllen und unterschreiben.</p><p><a class="btn" href="mailto:kontakt@klarwerk-ai.example?subject=Erstgespr%C3%A4ch%20anfragen">Erstgespräch anfragen</a></p>`;
     }
     quiz.addEventListener("change", e => {
       const m = e.target.name.match(/^q(\d+)$/);

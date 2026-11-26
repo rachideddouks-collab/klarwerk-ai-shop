@@ -31,7 +31,7 @@
           <li><a href="../index.html#produkte">Leistungen</a></li>
           <li><a href="../service/index.html">Service</a></li>
           <li><a href="../index.html#ueber-uns">Über uns</a></li>
-          <li><a href="../index.html#kontakt">Kontakt</a></li>
+          <li class="nav-cta"><a href="../index.html#kontakt">Erstgespräch</a></li>
         </ul>
       </nav>
       <a class="warenkorb" href="../warenkorb.html" id="warenkorb-link"><svg class="korb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h2.5l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span class="korb-text">Warenkorb</span> <span class="korb-zahl" id="anzahl">0</span></a>
@@ -42,12 +42,17 @@
     <div class="wrap test">
       <section>
         <h1>Wie KI-reif ist Ihr Unternehmen?</h1>
-        <p>12 Fragen in fünf Bereichen, etwa fünf Minuten. Ihr Ergebnis rechts aktualisiert sich mit jeder Antwort und zeigt, wo der größte Hebel liegt.</p>
+        <p>12 Fragen in fünf Bereichen, etwa fünf Minuten. Ihr Ergebnis aktualisiert sich mit jeder Antwort und zeigt, wo der größte Hebel liegt.</p>
+        <div class="fortschritt">
+          <span id="fort-text">0 von 12 beantwortet</span>
+          <a id="fort-link" href="#ergebnis" hidden>Zum Ergebnis</a>
+          <div class="track" aria-hidden="true"><div class="fill" id="fort-fill"></div></div>
+        </div>
         <div id="quiz"></div>
         <p class="note">Selbsteinschätzung zur Orientierung, keine Prüfung oder Zertifizierung. Ihre Antworten bleiben in Ihrem Browser. Erst wenn Sie „Ergebnis an Klarwerk AI senden“ wählen, öffnet sich ein E-Mail-Entwurf mit Ihrem ausgefüllten Ergebnis, den Sie prüfen und selbst abschicken. Der Shop überträgt nichts automatisch.</p>
       </section>
 
-      <aside class="panel" aria-live="polite" aria-label="Ihr Ergebnis">
+      <aside class="panel" id="ergebnis" aria-live="polite" aria-label="Ihr Ergebnis">
         <div class="gauge">
           <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
             <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="12"/>
@@ -62,7 +67,7 @@
         <div class="bars" id="bars"></div>
         <div class="rec" id="rec"><strong>Ihr nächster Schritt</strong><p>Beantworten Sie die Fragen, dann erscheint hier Ihre Empfehlung.</p></div>
         <div class="btns">
-          <button class="main" id="send" type="button">Ergebnis an Klarwerk AI senden</button>
+          <button id="send" type="button">Ergebnis an Klarwerk AI senden</button>
           <button id="copy" type="button">Ergebnis kopieren</button>
           <button id="reset" type="button">Zurücksetzen</button>
         </div>
@@ -75,8 +80,8 @@
     <div class="wrap">
       <nav aria-label="Rechtliches">
         <ul>
-          <li><a href="../index.html#impressum">Impressum</a></li>
-          <li><a href="../index.html#datenschutz">Datenschutzerklärung</a></li>
+          <li><a href="../impressum.html">Impressum</a></li>
+          <li><a href="../datenschutz.html">Datenschutzerklärung</a></li>
           <li><a href="../index.html#kontakt">Kontakt</a></li>
         </ul>
       </nav>

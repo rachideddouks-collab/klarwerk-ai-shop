@@ -16,10 +16,11 @@ Klarwerk-AI/
 ├── website/
 │   ├── index.html
 │   ├── warenkorb.html (Warenkorb-Seite, Inhalt baut js/app.js auf; seit 26.11.2026)
+│   ├── impressum.html, datenschutz.html (Platzhalter; seit 26.11.2026)
 │   ├── css/klarwerk.css
 │   ├── js/ (app.js: Handy-Menü, Produktliste mit Preisen, Warenkorb und Warenkorb-Seite, alle Seiten · reifegrad-test.js · potenzial-check.js)
 │   ├── fonts/ (SourceSans3.ttf, OFL.txt)
-│   ├── images/ (start.svg, produkt-1..5.svg, favicon.svg, BILDNACHWEIS.txt)
+│   ├── images/ (start.svg, produkt-1..5.svg, team-1..4.svg, favicon.svg, BILDNACHWEIS.txt)
 │   ├── orientierung/ (reifegrad-test.html, potenzial-check.html)
 │   ├── leistungen/ (index.html, paketumfang.html: Kurzübersicht mit Links auf die Produktseiten)
 │   ├── produkte/ (strategie.html, governance.html, automatisierung.html, agenten-bi.html, head-of-ai.html; seit 26.11.2026)
