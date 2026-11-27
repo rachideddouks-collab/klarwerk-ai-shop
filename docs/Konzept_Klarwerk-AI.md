@@ -17,7 +17,7 @@ Online-Shop für KI-Management-Leistungen als feste Pakete. Zielgruppe: Industri
 | 1 | Conversational AI & Digital Analytics Strategy | Ist-Aufnahme, Use-Case-Bewertung, Roadmap in 4 Wochen | 5.200 € |
 | 2 | AI Agents & Generative Business Intelligence | KI-Agent auf Kennzahlen, Pilot mit Dashboard in 6 Wochen | 11.900 € |
 | 3 | AI Automation & LowCode Integration | 2 Prozesse automatisiert und dokumentiert | 8.900 € |
-| 4 | Data Governance, Compliance & AI | Reifegrad-Check, Rollenmodell, Richtlinien (DSGVO, EU AI Act), keine Rechtsberatung | 5.900 € |
+| 4 | Data Governance, Compliance & AI | Compliance-Check, Rollenmodell, Richtlinien (DSGVO, EU AI Act), keine Rechtsberatung | 5.900 € |
 | 5 | Strategic AI Business Management (Head of AI) | KI-Steuerung auf Zeit, Mindestlaufzeit 3 Monate | 6.900 € / Monat |
 
 Kundenpfad: 1 Strategie → 4 Governance → 3 Automatisierung → 2 Agenten und BI → 5 laufende Steuerung durch einen Head of AI.

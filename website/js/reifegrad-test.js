@@ -14,7 +14,7 @@
       { k: "m", n: "Menschen",   d: "Kompetenz und Akzeptanz im Team.", pk: "Strategic AI Business Management (Head of AI)",
         tip: "Schulen Sie Führungskräfte und Teams praxisnah. Der EU AI Act verlangt ohnehin, dass Mitarbeitende, die KI nutzen, ausreichend KI-Kompetenz haben. Ein Head of AI auf Zeit verantwortet Befähigung und Akzeptanz." },
       { k: "g", n: "Governance", d: "Regeln, Risiken und EU AI Act.", pk: "Data Governance, Compliance &amp; AI",
-        tip: "Erstellen Sie eine KI-Richtlinie und eine Übersicht der eingesetzten KI-Systeme. Das schützt vor Datenabfluss und ist die Basis für die Pflichten nach EU AI Act. Das Paket liefert Reifegrad-Check, Rollenmodell und Richtlinien. Es ersetzt keine Rechtsberatung." }
+        tip: "Erstellen Sie eine KI-Richtlinie und eine Übersicht der eingesetzten KI-Systeme. Das schützt vor Datenabfluss und ist die Basis für die Pflichten nach EU AI Act. Das Paket liefert Compliance-Check, Rollenmodell und Richtlinien. Es ersetzt keine Rechtsberatung." }
     ];
     const Q = [
       ["s","Gibt es eine schriftliche KI-Strategie mit konkreten Zielen?",["Nein","Erste Ideen","In Arbeit","Ja, mit Zielen"]],

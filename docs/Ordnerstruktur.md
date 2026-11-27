@@ -30,4 +30,4 @@ Klarwerk-AI/
 ```
 Außerhalb des Projekts: `C:\projekte\klarwerk_ai_privat\` (Pixabay-Original und früheres Titelfoto, nicht im Repository).
 
-Regel: Jede Information gehört in genau einen Bereich (Orientierung, Leistungen, Service). Der Leistungsumfang je Paket steht nur auf der jeweiligen Produktseite. Das gemeinsame Design liegt in `website/css/klarwerk.css`, das JavaScript in `website/js/` (eingebunden im `<head>` mit `defer`). In den HTML-Seiten stehen weder `<style>`, `style="…"` noch `<script>`-Code.
+Regel: Jede Information gehört in genau einen Bereich (Orientierung, Leistungen, Service). Der Leistungsumfang je Paket steht nur auf der jeweiligen Produktseite. Das gemeinsame Design liegt in `website/css/klarwerk.css`, das JavaScript in `website/js/` (eingebunden im `<head>` mit `defer`). CSS und JS tragen eine Versionsmarke `?v=JJJJ-MM-TT`, die nach jeder Änderung auf allen Seiten erneuert wird. In den HTML-Seiten stehen weder `<style>`, `style="…"` noch `<script>`-Code.

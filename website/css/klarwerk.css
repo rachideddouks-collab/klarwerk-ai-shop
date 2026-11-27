@@ -458,7 +458,9 @@
     .seite-potenzial details > div { padding-top: 4px; }
 
     /* Kurzanfrage */
-    .seite-potenzial .anfrage { border-top: 3px solid var(--marke); margin-top: 48px; padding-top: 8px; scroll-margin-top: 96px; }
+    .seite-potenzial .anfrage { margin-top: 48px; scroll-margin-top: 96px; }
+    /* Kurzer Balken über jeder h2, wie auf den übrigen Seiten (seit 27.11.2026; ersetzt die Linie über der Anfrage) */
+    .seite-potenzial .doc h2::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 12px; }
     .seite-potenzial fieldset { border: 1px solid var(--linie); border-radius: var(--radius); padding: 14px 20px 6px; margin: 0 0 16px; }
     .seite-potenzial legend { font-weight: 700; color: var(--marke); padding: 0 8px; }
     .seite-potenzial .feld { margin-bottom: 14px; }
@@ -513,7 +515,7 @@
       .seite-potenzial summary { padding: 0; } .seite-potenzial details summary::after, .seite-potenzial details[open] summary::after { content: none; }
       .seite-potenzial summary h3 { font-size: 13pt; margin-top: 14px; }
       .seite-potenzial details > div { padding: 0; }
-      .seite-potenzial h2 { page-break-after: avoid; } .seite-potenzial .tab, .seite-potenzial .kaufbox { page-break-inside: avoid; }
+      .seite-potenzial h2 { page-break-after: avoid; } .seite-potenzial .doc h2::before { content: none; } .seite-potenzial .tab, .seite-potenzial .kaufbox { page-break-inside: avoid; }
       .seite-potenzial h1 { font-size: 26pt; } .seite-potenzial h2 { font-size: 16pt; margin-top: 18px; }
     }
 
@@ -745,25 +747,21 @@
     .bundles { margin-top: 32px; }
 
     /* Punkt 11 · Beispielergebnis als Prioritätenliste: drei Stufen, nach Reihenfolge geordnet (seit 26.11.2026 statt Tabelle).
-       Steht seit 27.11.2026 auf der Workshop-Seite (potenzial-check.html#beispiel), Anpassungen dafür am Ende dieses Abschnitts. */
+       Steht seit 27.11.2026 auf der Workshop-Seite (potenzial-check.html#beispiel). Seit 27.11.2026 Zeilen statt Karten:
+       links die Stufe, rechts die Anwendungsfälle, Balken links; bis 560 px steht die Stufe darüber.
+       Mit .seite-potenzial .doc davor, damit die Listen-, h3- und section-Regeln dieser Seite (70ch, Einzug) nicht greifen. */
     .muster-marke { font-size: 14px; font-weight: 700; color: var(--marke); background: #E4ECF7; display: inline-block; padding: 4px 10px; border-radius: var(--radius); margin: 0; }
-    .prioritaet { list-style: none; counter-reset: stufe; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-    .prioritaet > li { counter-increment: stufe; background: var(--flaeche); border: 1px solid var(--linie); border-top: 4px solid var(--marke); border-radius: var(--radius); padding: 20px; }
-    .prioritaet h3 { font-size: 20px; margin-bottom: 12px; }
-    .prioritaet h3::before { content: counter(stufe) " · "; }
-    .prioritaet ul { list-style: none; margin: 0; padding: 0; }
-    .prioritaet ul li + li { margin-top: 12px; }
-    .prioritaet strong { display: block; color: var(--text); }
-    .prioritaet span { display: block; font-size: 14px; color: var(--text-leise); }
-    @media (max-width: 860px) { .prioritaet { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
-    /* Auf der Workshop-Seite: deren Listen-, h3- und section-Regeln (.seite-potenzial .doc ul usw.) hier zurücksetzen */
     .seite-potenzial .beispiel-ergebnis { padding: 0; scroll-margin-top: 96px; }
-    .seite-potenzial .doc .prioritaet { max-width: none; padding: 0; margin: 16px 0 0; }
-    .seite-potenzial .doc .prioritaet ul { max-width: none; padding: 0; margin: 0; }
-    .seite-potenzial .doc .prioritaet li { margin-bottom: 0; }
-    .seite-potenzial .prioritaet h3 { font-size: 20px; margin: 0 0 12px; }
-    /* Angebot ist schmaler als die Startseite: Karten schon bis 1100 px untereinander */
-    @media (max-width: 1100px) { .seite-potenzial .prioritaet { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+    .seite-potenzial .doc .prioritaet { list-style: none; counter-reset: stufe; max-width: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+    .seite-potenzial .doc .prioritaet > li { counter-increment: stufe; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 8px 24px; align-items: start; margin: 0; background: var(--flaeche); border: 1px solid var(--linie); border-left: 4px solid var(--marke); border-radius: var(--radius); padding: 16px 20px; }
+    .seite-potenzial .prioritaet h3 { font-size: 18px; font-weight: 700; color: var(--marke); margin: 0; }
+    .seite-potenzial .prioritaet h3::before { content: counter(stufe) " · "; }
+    .seite-potenzial .doc .prioritaet ul { list-style: none; max-width: none; margin: 0; padding: 0; }
+    .seite-potenzial .doc .prioritaet ul li { margin: 0; overflow-wrap: break-word; }
+    .seite-potenzial .doc .prioritaet ul li + li { margin-top: 12px; }
+    .seite-potenzial .prioritaet strong { display: block; color: var(--text); }
+    .seite-potenzial .prioritaet span { display: block; font-size: 14px; color: var(--text-leise); }
+    @media (max-width: 560px) { .seite-potenzial .doc .prioritaet > li { grid-template-columns: minmax(0, 1fr); padding: 14px 16px; } }
 
     /* Punkt 5 · Tabellen werden am Handy zu Karten */
     @media (max-width: 700px) {
@@ -856,8 +854,6 @@
       .start img { aspect-ratio: 4 / 3; width: 100%; max-width: 280px; margin: 0 auto; }
       .orient-liste { margin-top: 16px; gap: 12px; }
       .orient-liste li { padding: 16px; }
-      .prioritaet { margin-top: 16px; }
-      .prioritaet > li { padding: 16px; }
 
       .produkte .intro { margin-bottom: 16px; }
       .produkte .raster { gap: 12px; }
