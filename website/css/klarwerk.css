@@ -744,9 +744,8 @@
     .empfehlung { position: absolute; top: -17px; left: 16px; margin: 0; background: var(--weiss); color: var(--aktion); border: 2px solid var(--aktion); border-radius: var(--radius); font-size: 14px; font-weight: 700; line-height: 1.5; padding: 2px 10px; }
     .bundles { margin-top: 32px; }
 
-    /* Punkt 11 · Beispielergebnis als Prioritätenliste: drei Stufen, nach Reihenfolge geordnet (seit 26.11.2026 statt Tabelle) */
-    .beispiel { background: var(--weiss); }
-    .beispiel h2::before { content: ""; display: block; width: 56px; height: 4px; background: var(--marke); margin-bottom: 14px; }
+    /* Punkt 11 · Beispielergebnis als Prioritätenliste: drei Stufen, nach Reihenfolge geordnet (seit 26.11.2026 statt Tabelle).
+       Steht seit 27.11.2026 auf der Workshop-Seite (potenzial-check.html#beispiel), Anpassungen dafür am Ende dieses Abschnitts. */
     .muster-marke { font-size: 14px; font-weight: 700; color: var(--marke); background: #E4ECF7; display: inline-block; padding: 4px 10px; border-radius: var(--radius); margin: 0; }
     .prioritaet { list-style: none; counter-reset: stufe; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .prioritaet > li { counter-increment: stufe; background: var(--flaeche); border: 1px solid var(--linie); border-top: 4px solid var(--marke); border-radius: var(--radius); padding: 20px; }
@@ -757,6 +756,14 @@
     .prioritaet strong { display: block; color: var(--text); }
     .prioritaet span { display: block; font-size: 14px; color: var(--text-leise); }
     @media (max-width: 860px) { .prioritaet { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+    /* Auf der Workshop-Seite: deren Listen-, h3- und section-Regeln (.seite-potenzial .doc ul usw.) hier zurücksetzen */
+    .seite-potenzial .beispiel-ergebnis { padding: 0; scroll-margin-top: 96px; }
+    .seite-potenzial .doc .prioritaet { max-width: none; padding: 0; margin: 16px 0 0; }
+    .seite-potenzial .doc .prioritaet ul { max-width: none; padding: 0; margin: 0; }
+    .seite-potenzial .doc .prioritaet li { margin-bottom: 0; }
+    .seite-potenzial .prioritaet h3 { font-size: 20px; margin: 0 0 12px; }
+    /* Angebot ist schmaler als die Startseite: Karten schon bis 1100 px untereinander */
+    @media (max-width: 1100px) { .seite-potenzial .prioritaet { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
 
     /* Punkt 5 · Tabellen werden am Handy zu Karten */
     @media (max-width: 700px) {

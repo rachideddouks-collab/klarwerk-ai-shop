@@ -40,7 +40,7 @@ Quellen: `docs/Projektanweisungen_Klarwerk-AI.md`, `docs/Designsystem_Stil-C.md`
 - Preise 28 px fett in Nachtblau; Bundles mit Häkchenliste und Etikett „Sie sparen … €“ (weiß auf Petrolgrün), Startpaket als „Empfohlen zum Einstieg“.
 - Team im Bereich „Über uns“ als gezeichnete Avatare `images/team-1..4.svg` (keine Fotos, leerer Alt-Text, Name steht darunter).
 - Titelbild: eigene Grafik `images/start.svg` im Stil der Produktbilder; alle Bilder selbst erstellt.
-- Startseite als Kundenreise: Kopf, Start (Nutzenversprechen, Hauptknopf zum Reifegrad-Test), Orientierung, Beispielergebnis (erfundener Musterbericht), fünf Produktkarten, Bundles, Service (Kurzfassung), Über uns, Kontakt (helle Kontaktbox), Fußbereich.
+- Startseite als Kundenreise: Kopf, Start (Nutzenversprechen, Hauptknopf „In 2 Schritten starten“ zur Orientierung), Orientierung (einziger Knopf zum Reifegrad-Test), fünf Produktkarten, Bundles, Service (Kurzfassung), Über uns, Kontakt (helle Kontaktbox), Fußbereich. Das Beispielergebnis (erfundener Musterbericht) steht auf der Workshop-Seite (potenzial-check.html#beispiel).
 
 ## Pflichten
 - Nichts von fremden Servern laden: keine Schriften, Skripte, Bilder oder externen Links.

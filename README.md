@@ -26,7 +26,7 @@ Alternativ lokale Vorschau mit Node.js (ohne Zusatzpakete): `node .claude/vorsch
 Das frühere Titelbild (Pixabay) liegt nur noch außerhalb des Projekts in `C:\projekte\klarwerk_ai_privat\` und ist nicht Teil des Repositorys.
 
 ## Seiten (website/)
-- `index.html` Startseite: Start, Orientierung, Beispielergebnis, fünf Produktkarten mit Demo-Warenkorb, Bundles, Service-Kurzfassung, Über uns, Kontakt
+- `index.html` Startseite: Start, Orientierung, fünf Produktkarten mit Demo-Warenkorb, Bundles, Service-Kurzfassung, Über uns, Kontakt
 - `produkte/` je Paket eine Seite (strategie, governance, automatisierung, agenten-bi, head-of-ai)
 - `warenkorb.html` Warenkorb mit Summen, Monatswahl für Head of AI und Demo-Bestellung
 - `impressum.html`, `datenschutz.html` Platzhalterseiten
